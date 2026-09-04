@@ -126,7 +126,7 @@ window.openCheckoutModal = function(planId = 'upsc-comprehensive') {
         <img src="assets/images/logo.png" alt="Emblem" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover;" />
         <div>
           <h3 style="font-size: 1.35rem; font-weight: 800;" class="gold-text">Secure Enrollment</h3>
-          <p style="font-size: 0.8rem; color: var(--text-slate);">Bureaucrats Hive • Unit of Make My Vash</p>
+          <p style="font-size: 0.8rem; color: var(--text-slate);">Bureaucrats Hive • Civil Services Mentorship Ecosystem</p>
         </div>
       </div>
 

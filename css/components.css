@@ -1064,22 +1064,125 @@
 }
 
 @media (max-width: 768px) {
-  .nav-menu, .nav-actions .btn-portal-ghost {
-    display: none;
+  .nav-menu, 
+  .nav-actions > a {
+    display: none !important;
   }
   .mobile-toggle-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+  }
+  .navbar-container {
+    height: 64px;
+    padding: 0 0.5rem;
+  }
+  .brand-logo {
+    gap: 0.65rem;
+  }
+  .brand-emblem-img {
+    width: 40px;
+    height: 40px;
+  }
+  .brand-name {
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+  }
+  .brand-tagline {
+    font-size: 0.65rem;
+  }
+  .mobile-drawer {
+    top: 64px;
+    padding: 1.5rem 1.25rem;
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+  .top-notice-bar {
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+  .top-notice-badge {
+    align-self: center;
+  }
+  .selector-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .selector-btn {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.88rem;
+    text-align: left;
   }
   .trust-metrics-strip {
     grid-template-columns: 1fr;
+    padding: 1.25rem;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .trust-metric-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-right: 0;
+    padding-bottom: 0.85rem;
+  }
+  .trust-metric-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.85rem;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-pill {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.85rem;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
   }
   .steps-timeline {
     grid-template-columns: 1fr;
   }
+  .pricing-card {
+    padding: 1.75rem 1.25rem;
+  }
   .pricing-card.featured {
     transform: none;
   }
+  .lead-section-grid {
+    gap: 2rem;
+  }
   .footer-top-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .modal-content {
+    max-width: 94vw;
+    padding: 1.75rem 1.25rem;
+    margin: 1rem auto;
   }
 }
+

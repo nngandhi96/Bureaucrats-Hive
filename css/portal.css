@@ -7,12 +7,12 @@
   border: 1.5px solid var(--gold-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-lg), 0 0 40px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 45px rgba(212, 175, 55, 0.2), inset 0 1px 2px rgba(255, 246, 205, 0.15);
 }
 
 /* Portal Window Header */
 .portal-top-header {
-  background: #060e1a;
+  background: #090F1B;
   padding: 1rem 1.75rem;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   display: flex;
@@ -39,6 +39,7 @@
   justify-content: center;
   font-weight: 800;
   color: var(--gold-light);
+  box-shadow: inset 0 1px 1px rgba(255, 246, 205, 0.3), 0 0 12px rgba(212, 175, 55, 0.3);
 }
 
 .portal-student-name {
@@ -53,6 +54,7 @@
   background: rgba(212, 175, 55, 0.12);
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-full);
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .portal-nav-tabs {
@@ -88,12 +90,13 @@
   background: var(--gold-muted);
   border-color: var(--gold-light);
   color: var(--gold-light);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.2);
 }
 
 /* Portal Content Body */
 .portal-content-body {
   padding: 2rem;
-  background: radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.04) 0%, rgba(17, 34, 64, 0.95) 100%);
+  background: radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.05) 0%, rgba(19, 30, 49, 0.96) 100%);
   min-height: 450px;
 }
 

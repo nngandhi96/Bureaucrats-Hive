@@ -4,7 +4,7 @@
 
 /* Top Alert Bar / Batch Notice */
 .top-notice-bar {
-  background: linear-gradient(90deg, #112240 0%, rgba(212, 175, 55, 0.25) 50%, #112240 100%);
+  background: linear-gradient(90deg, #131E31 0%, rgba(212, 175, 55, 0.3) 50%, #131E31 100%);
   border-bottom: 1px solid var(--gold-border);
   padding: 0.55rem 1rem;
   font-size: 0.85rem;
@@ -15,16 +15,19 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .top-notice-badge {
   background: var(--gold-gradient);
-  color: #0A192F;
+  color: #120D04;
   font-weight: 800;
-  padding: 0.15rem 0.6rem;
+  padding: 0.15rem 0.65rem;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* 1. Header / Navbar */
@@ -33,16 +36,16 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(10, 25, 47, 0.88);
+  background: rgba(14, 22, 36, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   transition: all var(--transition-normal);
 }
 
 .site-header.scrolled {
-  background: rgba(10, 25, 47, 0.96);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.1);
+  background: rgba(14, 22, 36, 0.97);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.12);
   border-bottom-color: var(--gold-border);
 }
 
@@ -64,6 +67,8 @@
 .brand-emblem-img {
   width: 52px;
   height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
   filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
   transition: transform var(--transition-fast);
 }
@@ -199,9 +204,9 @@
 /* 2. Hero Section */
 .hero-section {
   position: relative;
-  padding: 5rem 0 6rem 0;
+  padding: 5.5rem 0 6.5rem 0;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 20%, rgba(27, 38, 59, 0.5) 0%, rgba(10, 25, 47, 1) 75%);
+  background: radial-gradient(circle at 50% 15%, rgba(29, 45, 73, 0.55) 0%, rgba(14, 22, 36, 1) 80%);
 }
 
 .hero-grid {
@@ -215,7 +220,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(212, 175, 55, 0.12);
   border: 1px solid var(--gold-border);
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-full);
@@ -224,7 +229,7 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+  box-shadow: inset 0 1px 1px rgba(255, 246, 205, 0.2), 0 0 20px rgba(212, 175, 55, 0.18);
 }
 
 .hero-pill-dot {
@@ -265,12 +270,12 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   background: var(--bg-surface-glass);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.24);
   border-radius: var(--radius-md);
   padding: 1.5rem;
   margin-top: 3.5rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 246, 205, 0.12);
 }
 
 .trust-metric-item {
@@ -296,6 +301,7 @@
   justify-content: center;
   color: var(--gold-light);
   flex-shrink: 0;
+  box-shadow: inset 0 1px 1px rgba(255, 246, 205, 0.2);
 }
 
 .trust-text-val {
@@ -314,11 +320,13 @@
 
 /* Hero Right: Interactive Quick Assessment Widget */
 .hero-interactive-card {
-  background: var(--bg-surface);
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1.5px solid var(--gold-border);
   border-radius: var(--radius-lg);
   padding: 2.25rem;
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 175, 55, 0.2), inset 0 1px 2px rgba(255, 246, 205, 0.2);
   position: relative;
 }
 

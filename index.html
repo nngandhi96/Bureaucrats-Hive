@@ -33,220 +33,521 @@
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-notice-bar">
-    <span class="top-notice-badge">New Batch Alert</span>
-    <span>Target UPSC CSE 2026 &amp; 71st BPSC Integrated Mentorship Batch starts this Monday. Limited to 30 Aspirants per Mentor.</span>
-    <a href="#strategy-session" style="color: #7A5308; text-decoration: underline; margin-left: 0.5rem; font-weight: 700;">Claim Free Strategy Slot &rarr;</a>
+  <!-- Smriti Shah Continuous Announcement Ribbon -->
+  <div class="launch-ribbon">
+    <a href="#courses-catalog">
+      🚀 <strong>NEW BATCH ADMISSIONS OPEN:</strong> Target UPSC CSE 2026 Comprehensive Mentorship &amp; 71st BPSC Super-30 Integrated Cohort <span class="dot">•</span> Limited 30 Seats per Mentor <span class="dot">•</span> <strong>Special 35% Early Bird Fee Waiver Active Today!</strong> <span class="dot">•</span> 100% Online With 1-on-1 Mentor Handholding &amp; 24h Mains Evaluation <span class="dot">•</span> Free Express Hardcopy Dispatch Pan-India &rarr;
+    </a>
   </div>
 
-  <!-- 1. Header & Navigation -->
-  <header class="site-header" id="siteHeader">
-    <div class="container navbar-container">
-      <!-- Brand Logo -->
-      <a href="#home" class="brand-logo" aria-label="Bureaucrats Hive Home">
-        <img src="assets/images/logo.png" alt="Bureaucrats Hive Emblem Logo" class="brand-emblem-img" />
-        <div class="brand-text-block">
-          <span class="brand-name">Bureaucrats Hive</span>
-          <span class="brand-tagline">UPSC &amp; BPSC Mentorship</span>
-        </div>
-      </a>
+  <!-- Smriti Shah Clean White Sticky Navbar -->
+  <header class="navbar-edtech" id="siteHeader">
+    <a href="#home" class="brand-edtech" aria-label="Bureaucrats Hive Home">
+      <div class="brand-icon-edtech">BH</div>
+      <div class="brand-txt-edtech">Bureaucrats <span>Hive</span></div>
+    </a>
 
-      <!-- Desktop Nav Links -->
-      <nav class="nav-menu">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#programs" class="nav-link">Mentorship Programs</a>
-        <a href="#offerings" class="nav-link">Test Series</a>
-        <a href="#methodology" class="nav-link">Methodology</a>
-        <a href="#student-portal" class="nav-link">Student Portal</a>
-        <a href="#pricing" class="nav-link">Fee Structure</a>
-        <a href="#about" class="nav-link">About Us</a>
-        <a href="#faq" class="nav-link">FAQs</a>
-      </nav>
+    <!-- Desktop Navigation Links -->
+    <nav class="desktop-links-edtech">
+      <a href="#home">Home</a>
+      <a href="#courses-catalog">Courses</a>
+      <a href="#notes-catalog">Books &amp; Notes</a>
+      <a href="#offerings">Offerings</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#student-portal">Portal</a>
+      <a href="#pricing">Fee Structure</a>
+      <a href="#faq">FAQs</a>
+    </nav>
 
-      <!-- Nav Action CTAs -->
-      <div class="nav-actions">
-        <a href="#student-portal" class="btn-portal-ghost" aria-label="Student Portal">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-          Portal Demo
-        </a>
-        <a href="#strategy-session" class="btn btn-gold btn-sm">
-          Book Free Strategy Session
-        </a>
-        <!-- Mobile menu toggle button -->
-        <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-      </div>
+    <!-- Right Action Items: Track Order, Student Login & Cart Badge -->
+    <div class="nav-actions-edtech">
+      <button class="track-btn-edtech" onclick="openSampleModal('Order Tracking &amp; Hardcopy Dispatch')" title="Track your dispatched books and modules">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        <span>Track Order</span>
+      </button>
+
+      <button class="track-btn-edtech" onclick="openAuthModal()" title="Student LMS Portal Login">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Student Login</span>
+      </button>
+
+      <button class="cart-fab" onclick="openCart()" aria-label="View Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span>Cart</span>
+        <span class="cart-badge">0</span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
     </div>
 
     <!-- Mobile Drawer Menu -->
     <div class="mobile-drawer" id="mobileDrawer">
       <a href="#home" class="nav-link">Home</a>
-      <a href="#programs" class="nav-link">Mentorship Programs</a>
-      <a href="#offerings" class="nav-link">Test Series &amp; Mains</a>
+      <a href="#courses-catalog" class="nav-link">Mentorship Courses</a>
+      <a href="#notes-catalog" class="nav-link">Books &amp; Study Notes</a>
+      <a href="#offerings" class="nav-link">Offerings &amp; Test Series</a>
       <a href="#methodology" class="nav-link">Our Methodology</a>
       <a href="#student-portal" class="nav-link">Student Portal Demo</a>
       <a href="#pricing" class="nav-link">Pricing &amp; Fees</a>
-      <a href="#about" class="nav-link">About Us</a>
       <a href="#faq" class="nav-link">FAQs</a>
       <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
-        <a href="#pricing" class="btn btn-gold">Enroll Now</a>
-        <a href="#strategy-session" class="btn btn-outline-gold">Book Free Strategy Call</a>
+        <button onclick="openCart();" class="btn btn-blue" style="width: 100%;">View Cart &amp; Checkout</button>
+        <button onclick="openAuthModal();" class="btn btn-outline-gold" style="width: 100%;">Student Login</button>
       </div>
     </div>
   </header>
 
-  <!-- 2. Hero Section -->
-  <section class="hero-section" id="home">
-    <div class="bg-honeycomb-pattern"></div>
-    <div class="container">
-      <div class="hero-grid">
-        
-        <!-- Left Hero Content -->
-        <div class="hero-left-content">
-          <div class="hero-pill">
-            <span class="hero-pill-dot"></span>
-            <span>Admissions Open for 2025 – 2026 Academic Cohort</span>
-          </div>
+  <!-- 2. Smriti Shah Asymmetric Split Hero Section -->
+  <section class="hero-edtech" id="home">
+    <div class="hero-shell">
+      
+      <!-- Left Column: Copy, Search, CTAs & Trust Box -->
+      <div class="hero-copy">
+        <span class="hero-tag-edtech">Admissions Open • 2025-2026 Academic Cohort</span>
+        <h1>
+          Courses &amp; mentorship that build <br />
+          <em>IAS &amp; BPSC toppers.</em>
+        </h1>
+        <p>
+          Structured, hyper-personalized civil services programs, standard book modules, and stage-wise answer evaluation. Designed to turn serious aspirants into rankers with daily accountability.
+        </p>
 
-          <h1 class="hero-title">
-            Guiding Ambitions, <br />
-            <span class="gold-text">Building Bureaucrats.</span>
-          </h1>
-
-          <p class="hero-description">
-            India's most rigorous, hyper-personalized online mentorship &amp; stage-wise test series ecosystem for <strong>UPSC CSE &amp; BPSC</strong> aspirants. Master Prelims accuracy, Mains analytical answer writing, and personalized daily execution.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#pricing" class="btn btn-gold btn-lg">
-              Explore Programs &amp; Enroll
-              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-            <a href="#strategy-session" class="btn btn-outline-gold btn-lg">
-              Book Free Strategy Session
-            </a>
-          </div>
-
-          <!-- Micro Trust Stats -->
-          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <span style="color: #F5C542; font-weight: 800; font-size: 1.1rem;">★ 4.9/5</span>
-              <span style="font-size: 0.85rem; color: var(--text-slate);">Aspirant Satisfaction Rating</span>
-            </div>
-            <div style="width: 1px; height: 20px; background: rgba(255, 255, 255, 0.15);"></div>
-            <div style="font-size: 0.85rem; color: var(--text-slate);">
-              <span style="color: var(--text-white); font-weight: 700;">100% Online</span> • Direct Mentor Access
-            </div>
-          </div>
+        <!-- Live Instant Search Bar -->
+        <div class="search-bar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="catalog-search-input" placeholder="Search courses, test series, notes (e.g. UPSC, BPSC, Mains)..." oninput="filterItems(this.value)" />
+          <button class="btn btn-blue" style="padding: 8px 16px; font-size: 13px; border-radius: 8px;" onclick="document.getElementById('courses-catalog').scrollIntoView({behavior:'smooth'})">Explore</button>
         </div>
 
-        <!-- Right Hero Interactive Assessment Widget -->
-        <div class="hero-interactive-card">
-          <div class="card-header-badge">
+        <!-- Action CTAs -->
+        <div class="hero-buttons">
+          <a href="#courses-catalog" class="hero-cta primary">
+            Explore Courses &amp; Modules &rarr;
+          </a>
+          <a href="#strategy-session" class="hero-cta secondary">
+            Book Free Strategy Call
+          </a>
+        </div>
+
+        <!-- 3-Item Trust Stats Box -->
+        <div class="hero-trust">
+          <div>
+            <i>★</i>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 800;" class="gold-text">Target Diagnostic</h3>
-              <p style="font-size: 0.78rem; color: var(--text-slate);">Generate your customized Civil Services roadmap</p>
-            </div>
-            <span class="card-tag">Interactive</span>
-          </div>
-
-          <!-- Step 1: Target Exam -->
-          <div class="assessment-step">
-            <label class="assessment-label">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 14 14"></polygon></svg>
-              1. Select Target Civil Service Exam:
-            </label>
-            <div class="selector-grid">
-              <button type="button" class="selector-btn exam-selector-btn active" data-exam="UPSC CSE">UPSC CSE</button>
-              <button type="button" class="selector-btn exam-selector-btn" data-exam="BPSC">BPSC (71st/72nd)</button>
-              <button type="button" class="selector-btn exam-selector-btn" data-exam="Both (UPSC &amp; BPSC)">Both CSE + BPSC</button>
+              <strong>4.9 / 5.0</strong>
+              <span>12,000+ Aspirants</span>
             </div>
           </div>
-
-          <!-- Step 2: Preparation Stage -->
-          <div class="assessment-step">
-            <label class="assessment-label">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              2. Your Current Preparation Stage:
-            </label>
-            <div class="selector-grid">
-              <button type="button" class="selector-btn stage-selector-btn active" data-stage="Beginner">Beginner (0-6 mo)</button>
-              <button type="button" class="selector-btn stage-selector-btn" data-stage="Prelims Ready">Prelims Oriented</button>
-              <button type="button" class="selector-btn stage-selector-btn" data-stage="Mains Focused">Mains Focused</button>
+          <div>
+            <i>⚡</i>
+            <div>
+              <strong>24-48h Review</strong>
+              <span>Strict Mains SLA</span>
             </div>
           </div>
-
-          <!-- Dynamic Roadmap Output -->
-          <div class="assessment-result-box">
-            <div class="roadmap-stat-row">
-              <span>Recommended Duration:</span>
-              <span id="calcDuration">12 Months (3-Phase Cycle)</span>
+          <div>
+            <i>🛡️</i>
+            <div>
+              <strong>1-on-1 Mentor</strong>
+              <span>Cleared Rankers</span>
             </div>
-            <div class="roadmap-stat-row">
-              <span>Evaluated Tests:</span>
-              <span id="calcMocks">35 Prelims + 20 Mains Mocks</span>
-            </div>
-            <div class="roadmap-stat-row">
-              <span>Answer Review Target:</span>
-              <span id="calcAnswers">250+ Evaluated Questions</span>
-            </div>
-            <div class="roadmap-stat-row" style="margin-top: 0.5rem; border-top: 1px dashed rgba(212,175,55,0.2); padding-top: 0.4rem;">
-              <span style="color: var(--gold-light);">Strategy Focus:</span>
-              <span id="calcFocus" style="color: var(--text-white); font-weight: 600; text-align: right; max-width: 60%;">NCERT Foundation + Core GS 1-4 + CSAT</span>
-            </div>
-          </div>
-
-          <div style="margin-top: 1.25rem;">
-            <a href="#strategy-session" class="btn btn-gold btn-sm" style="width: 100%;">
-              Get Detailed Syllabus Audit Call &rarr;
-            </a>
           </div>
         </div>
-
       </div>
 
-      <!-- Trust Badges Metrics Strip -->
-      <div class="trust-metrics-strip">
-        <div class="trust-metric-item">
-          <div class="trust-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      <!-- Right Column: 3 Interactive 3D Promotional Cards -->
+      <div class="hero-products">
+        
+        <!-- Promo Card 1: UPSC CSE 2026 -->
+        <a href="#pricing" class="promo-card" onclick="addToCart('upsc-comp-2026', 'Target UPSC CSE 2026 Comprehensive Mentorship', 18999, 'Prelims + Mains + Interview'); return false;">
+          <div class="promo-visual">
+            <span class="promo-tag">PRELIMS + MAINS</span>
+            <div class="cover">
+              <small>UPSC CSE 2026</small>
+              <b>GS 1-4 &amp; CSAT</b>
+              <span>PERSONALIZED 1-ON-1 COHORT</span>
+            </div>
           </div>
-          <div>
-            <div class="trust-text-val">1-on-1 Guidance</div>
-            <div class="trust-text-lbl">Personalized Weekly Mentorship Calls</div>
+          <div class="promo-info">
+            <h3>Target UPSC CSE 2026</h3>
+            <p>Complete 3-Stage Mentorship</p>
+            <ul>
+              <li>Weekly 1-on-1 Mentor Video Calls</li>
+              <li>250+ Evaluated Mains Answers</li>
+              <li>35 Prelims Tests &amp; Heatmaps</li>
+            </ul>
+            <div style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 18px; font-weight: 800; color: var(--ink);">₹18,999</span>
+              <span style="font-size: 12px; color: var(--blue); font-weight: 700;">Add to Cart +</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Promo Card 2: 71st BPSC Super-30 -->
+        <a href="#pricing" class="promo-card" onclick="addToCart('bpsc-super-30', '71st BPSC Super-30 Integrated Cohort', 12499, 'Prelims GS + Mains + Bihar Special'); return false;">
+          <div class="promo-visual">
+            <span class="promo-tag">71ST BPSC</span>
+            <div class="cover bpsc">
+              <small>BIHAR PCS</small>
+              <b>SUPER 30 BATCH</b>
+              <span>INTEGRATED PRE + MAINS</span>
+            </div>
+          </div>
+          <div class="promo-info">
+            <h3>71st BPSC Super-30</h3>
+            <p>Targeted SDM/DSP Cohort</p>
+            <ul>
+              <li>Bihar Special GS &amp; Economy</li>
+              <li>Mains Sectional Mock Tests</li>
+              <li>Model Hindi &amp; English Copies</li>
+            </ul>
+            <div style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 18px; font-weight: 800; color: var(--ink);">₹12,499</span>
+              <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Add to Cart +</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Promo Card 3: Mains Daily Answer Writing -->
+        <a href="#pricing" class="promo-card" onclick="addToCart('mains-daw-90', 'GS Mains Daily Answer Writing &amp; Evaluation (90 Days)', 6999, 'Daily 2 Questions + Detailed Rubrics'); return false;">
+          <div class="promo-visual">
+            <span class="promo-tag">MAINS DAW</span>
+            <div class="cover test">
+              <small>GS EVALUATION</small>
+              <b>DAW 90 DAYS</b>
+              <span>STRICT 24H TURNAROUND</span>
+            </div>
+          </div>
+          <div class="promo-info">
+            <h3>GS Daily Answer Writing</h3>
+            <p>90-Day High Yield Program</p>
+            <ul>
+              <li>Daily 2 Questions &amp; Synopses</li>
+              <li>Line-by-line Feedback SLA</li>
+              <li>Micro-diagrams &amp; Intro/Conc</li>
+            </ul>
+            <div style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 18px; font-weight: 800; color: var(--ink);">₹6,999</span>
+              <span style="font-size: 12px; color: #9E7012; font-weight: 700;">Add to Cart +</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Horizontal Trust Pill Strip -->
+  <div class="trust-bar-edtech">
+    <div class="trust-pill-edtech">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--blue);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      <span>1-on-1 Personalized Mentorship</span>
+    </div>
+    <div class="trust-pill-edtech">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--blue);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      <span>24-48h Strict Answer Review SLA</span>
+    </div>
+    <div class="trust-pill-edtech">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--blue);"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+      <span>Pan-India Free Express Delivery for Printed Kits</span>
+    </div>
+    <div class="trust-pill-edtech">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--blue);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <span>Mentors Cleared UPSC / BPSC Interview</span>
+    </div>
+  </div>
+
+  <!-- 3. Catalog Tier 1: Flagship Mentorship Programs & Test Series -->
+  <section class="catalog-wrap" id="courses-catalog">
+    <div class="catalog-section-head">
+      <div>
+        <h2>🎓 Our Flagship Mentorship Programs <span id="searchCountResult" class="catalog-count-badge"></span></h2>
+        <p style="font-size: 14px; color: var(--ed-muted); margin-top: 4px;">Comprehensive online batches with 1-on-1 handholding, daily targets, and stage-wise evaluation.</p>
+      </div>
+      <a href="#pricing" style="color: var(--blue); font-weight: 700; text-decoration: none; font-size: 14px;">View Detailed Syllabi &rarr;</a>
+    </div>
+
+    <div class="items-grid">
+      
+      <!-- Course 1 -->
+      <div class="item-card">
+        <div class="item-cover-wrap">
+          <span class="item-discount-tag">SAVE 37%</span>
+          <div class="cover" style="width: 105px; height: 150px; margin-top: 10px;">
+            <small>UPSC CSE 2026</small>
+            <b style="font-size: 17px;">COMPREHENSIVE</b>
+            <span style="font-size: 7px;">PRELIMS + MAINS + INTERVIEW</span>
           </div>
         </div>
-
-        <div class="trust-metric-item">
-          <div class="trust-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <div class="item-body">
+          <div class="item-faculty">🏛️ Bureaucrats Hive Senior Faculty</div>
+          <h3 class="item-title">Target UPSC CSE 2026 Comprehensive Mentorship</h3>
+          <ul class="item-features-list">
+            <li>Dedicated 1-on-1 ranker mentor assigned</li>
+            <li>Weekly 45-min Zoom strategy &amp; review sessions</li>
+            <li>250+ Evaluated Mains answers with rubrics</li>
+            <li>35 Prelims mocks + CSAT sectional tests</li>
+          </ul>
+          <div class="item-price-row">
+            <span class="item-price">₹18,999</span>
+            <span class="item-mrp">₹29,999</span>
+            <span class="item-pct">37% OFF</span>
           </div>
-          <div>
-            <div class="trust-text-val">24-48h Evaluation</div>
-            <div class="trust-text-lbl">Strict Mains Answer Review SLA</div>
+          <button class="btn-cart-add" onclick="addToCart('upsc-comp-2026', 'Target UPSC CSE 2026 Comprehensive Mentorship', 18999, 'UPSC Mentorship')">
+            🛒 Add to Cart
+          </button>
+          <button class="btn-sample-view" onclick="openSampleModal('Target UPSC CSE 2026 Comprehensive Mentorship')">
+            📄 View Sample Schedule
+          </button>
+        </div>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="item-card">
+        <div class="item-cover-wrap" style="background: linear-gradient(145deg, #FFF5F2, #FDECE7);">
+          <span class="item-discount-tag" style="background: var(--coral);">SAVE 38%</span>
+          <div class="cover bpsc" style="width: 105px; height: 150px; margin-top: 10px;">
+            <small>71ST BPSC</small>
+            <b style="font-size: 17px;">SUPER 30</b>
+            <span style="font-size: 7px;">INTEGRATED PRE + MAINS</span>
           </div>
         </div>
-
-        <div class="trust-metric-item">
-          <div class="trust-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <div class="item-body">
+          <div class="item-faculty">🌟 BPSC Rankers Advisory Group</div>
+          <h3 class="item-title">71st BPSC Super-30 Integrated Cohort</h3>
+          <ul class="item-features-list">
+            <li>Comprehensive Bihar Special GS &amp; Economy</li>
+            <li>Prelims Negative-marking accuracy drills</li>
+            <li>12 Full-length Mains simulated tests</li>
+            <li>Bilingual evaluation (English &amp; Hindi)</li>
+          </ul>
+          <div class="item-price-row">
+            <span class="item-price">₹12,499</span>
+            <span class="item-mrp">₹19,999</span>
+            <span class="item-pct">38% OFF</span>
           </div>
-          <div>
-            <div class="trust-text-val">Stage-Wise Tests</div>
-            <div class="trust-text-lbl">NCERT, Sectional &amp; Full Mocks</div>
+          <button class="btn-cart-add" onclick="addToCart('bpsc-super-30', '71st BPSC Super-30 Integrated Cohort', 12499, 'BPSC Mentorship')">
+            🛒 Add to Cart
+          </button>
+          <button class="btn-sample-view" onclick="openSampleModal('71st BPSC Super-30 Integrated Cohort')">
+            📄 View Sample Schedule
+          </button>
+        </div>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="item-card">
+        <div class="item-cover-wrap" style="background: linear-gradient(145deg, #F8F9FA, #EDF2F7);">
+          <span class="item-discount-tag" style="background: #9E7012;">SAVE 42%</span>
+          <div class="cover test" style="width: 105px; height: 150px; margin-top: 10px;">
+            <small>MAINS DAW</small>
+            <b style="font-size: 17px;">90 DAYS</b>
+            <span style="font-size: 7px;">DAILY 2 QUESTIONS &amp; REVIEW</span>
           </div>
         </div>
+        <div class="item-body">
+          <div class="item-faculty">✍️ Evaluated by Cleared Mains Officers</div>
+          <h3 class="item-title">GS Mains Daily Answer Writing &amp; Review (90 Days)</h3>
+          <ul class="item-features-list">
+            <li>Daily 2 UPSC-standard analytical questions</li>
+            <li>Guaranteed 24-48h copy return with line corrections</li>
+            <li>Value-addition fodder, diagrams &amp; quotes</li>
+            <li>Weekly performance rank list &amp; model answers</li>
+          </ul>
+          <div class="item-price-row">
+            <span class="item-price">₹6,999</span>
+            <span class="item-mrp">₹11,999</span>
+            <span class="item-pct">42% OFF</span>
+          </div>
+          <button class="btn-cart-add" onclick="addToCart('mains-daw-90', 'GS Mains Daily Answer Writing &amp; Review (90 Days)', 6999, 'Mains Evaluation')">
+            🛒 Add to Cart
+          </button>
+          <button class="btn-sample-view" onclick="openSampleModal('GS Mains Daily Answer Writing &amp; Review')">
+            📄 View Sample Evaluated Copy
+          </button>
+        </div>
+      </div>
 
-        <div class="trust-metric-item">
-          <div class="trust-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <!-- Course 4 -->
+      <div class="item-card">
+        <div class="item-cover-wrap" style="background: linear-gradient(145deg, #F0F9FF, #E0F2FE);">
+          <span class="item-discount-tag" style="background: #0284C7;">SAVE 44%</span>
+          <div class="cover" style="width: 105px; height: 150px; margin-top: 10px; border-left-color: #0284C7;">
+            <small>UPSC PRELIMS</small>
+            <b style="font-size: 17px;">GS + CSAT</b>
+            <span style="font-size: 7px;">35 SECTIONAL + FULL MOCKS</span>
           </div>
-          <div>
-            <div class="trust-text-val">100% Online Handholding</div>
-            <div class="trust-text-lbl">Anywhere in India Access</div>
+        </div>
+        <div class="item-body">
+          <div class="item-faculty">🎯 Prelims Accuracy Mastery Cell</div>
+          <h3 class="item-title">Prelims Test Series 2026 (GS Paper 1 + CSAT)</h3>
+          <ul class="item-features-list">
+            <li>35 High-fidelity simulated test papers</li>
+            <li>Detailed 25+ page bilingual solution explanations</li>
+            <li>All-India percentile ranking &amp; weakness heatmaps</li>
+            <li>CSAT logical reasoning &amp; comprehension mastery</li>
+          </ul>
+          <div class="item-price-row">
+            <span class="item-price">₹4,999</span>
+            <span class="item-mrp">₹8,999</span>
+            <span class="item-pct">44% OFF</span>
           </div>
+          <button class="btn-cart-add" onclick="addToCart('prelims-test-2026', 'Prelims Test Series 2026 (GS Paper 1 + CSAT)', 4999, 'Test Series')">
+            🛒 Add to Cart
+          </button>
+          <button class="btn-sample-view" onclick="openSampleModal('Prelims Test Series 2026')">
+            📄 View Sample Mock &amp; Key
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Catalog Tier 2: Recommended Study Notes & Printed Modules -->
+  <section class="catalog-wrap" id="notes-catalog" style="padding-top: 10px;">
+    <div class="catalog-section-head">
+      <div>
+        <h2>📚 Recommended Study Notes &amp; Printed Modules</h2>
+        <p style="font-size: 14px; color: var(--ed-muted); margin-top: 4px;">High-yield toppers compendiums, visual mindmaps, and case law summaries dispatched straight to your address.</p>
+      </div>
+      <span style="font-size: 13px; color: var(--green); font-weight: 700;">🚚 Pan-India Free Courier Included</span>
+    </div>
+
+    <div class="items-grid">
+      
+      <!-- Book 1 -->
+      <div class="item-card">
+        <div class="item-cover-wrap" style="background: linear-gradient(145deg, #FFFBEB, #FEF3C7);">
+          <span class="item-discount-tag" style="background: #D97706;">SAVE 47%</span>
+          <div class="cover" style="width: 105px; height: 150px; margin-top: 10px; border-left-color: #D97706;">
+            <small>GS PAPER 4</small>
+            <b style="font-size: 17px;">ETHICS</b>
+            <span style="font-size: 7px;">CASE STUDIES &amp; DEFINITIONS</span>
+          </div>
+        </div>
+        <div class="item-body">
+          <div class="item-faculty">📘 Printed Spiral Hardcopy + E-Book</div>
+          <h3 class="item-title">GS Paper 4 Ethics &amp; Case Studies Master Compendium</h3>
+          <ul class="item-features-list">
+            <li>120+ Solved ethical dilemma case studies</li>
+            <li>50 Thinkers quotes, keywords &amp; moral diagrams</li>
+            <li>Ready-to-use intro &amp; conclusion templates</li>
+            <li>Past 10 years UPSC solved thematic papers</li>
+          </ul>
+          <div class="item-price-row">
+            <span class="item-price">₹799</span>
+            <span class="item-mrp">₹1,499</span>
+            <span class="item-pct">47% OFF</span>
+          </div>
+          <button class="btn-cart-add" onclick="addToCart('book-ethics-gs4', 'GS Paper 4 Ethics Master Compendium (Hardcopy)', 799, 'Study Book')">
+            🛒 Add to Cart
+          </button>
+          <button class="btn-sample-view" onclick="openSampleModal('GS Paper 4 Ethics Master Compendium')">
+            📄 Read Sample Chapter (PDF)
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="item-card">
+        <div class="item-cover-wrap" style="background: linear-gradient(145deg, #EFF6FF, #DBEAFE);">
+          <span class="item-discount-tag" style="background: var(--blue);">SAVE 46%</span>
+          <div class="cover" style="width: 105px; height: 150px; margin-top: 10px; border-left-color: var(--blue);">
+            <small>GS PAPER 2</small>
+            <b style="font-size: 17px;">POLITY &amp; GOV</b>
+            <span style="font-size: 7px;">MINDMAPS &amp; LANDMARK CASES</span>
+          </div>
+        </div>
+        <div class="item-body">
+          <div class="item-faculty">📘 Printed Spiral Hardcopy + E-Book</div>
+          <h3 class="item-title">Indian Polity &amp; Constitution Mindmaps Framework</h3>
+          <ul class="item-features-list">
+            <li>Visual constitutional flowchart for all 395 articles</li>
+            <li>Top 85 Supreme Court landmark judicial precedents</li>
+            <li>Governance schemes &amp; statutory bodies breakdown</li>
+            <li>High-yield revision tables for rapid recall</li>
+          </ul>
+          <div class="item-price-row">
+            <span class="item-price">₹649</span>
+            <span class="item-mrp">₹1,199</span>
+            <span class="item-pct">46% OFF</span>
+          </div>
+          <button class="btn-cart-add" onclick="addToCart('book-polity-mindmaps', 'Indian Polity & Constitution Mindmaps Framework', 649, 'Study Book')">
+            🛒 Add to Cart
+          </button>
+          <button class="btn-sample-view" onclick="openSampleModal('Indian Polity & Constitution Mindmaps Framework')">
+            📄 Read Sample Chapter (PDF)
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="item-card">
+        <div class="item-cover-wrap" style="background: linear-gradient(145deg, #FFF1F2, #FFE4E6);">
+          <span class="item-discount-tag" style="background: var(--coral);">SAVE 46%</span>
+          <div class="cover bpsc" style="width: 105px; height: 150px; margin-top: 10px; border-left-color: var(--coral);">
+            <small>BPSC SPECIAL</small>
+            <b style="font-size: 17px;">BIHAR GS</b>
+            <span style="font-size: 7px;">HISTORY, GEO &amp; SURVEY</span>
+          </div>
+        </div>
+        <div class="item-body">
+          <div class="item-faculty">📘 Bilingual Printed Hardcopy + E-Book</div>
+          <h3 class="item-title">Bihar Special GS Comprehensive Module (71st BPSC)</h3>
+          <ul class="item-features-list">
+            <li>Complete Bihar History: Ancient, Medieval &amp; Freedom Struggle</li>
+            <li>Bihar Economic Survey 2024-25 &amp; Budget highlights</li>
+            <li>Geography, river drainage &amp; industrial policies</li>
+            <li>Previous 15 years BPSC Mains questions solved</li>
+          </ul>
+          <div class="item-price-row">
+            <span class="item-price">₹699</span>
+            <span class="item-mrp">₹1,299</span>
+            <span class="item-pct">46% OFF</span>
+          </div>
+          <button class="btn-cart-add" onclick="addToCart('book-bihar-special', 'Bihar Special GS Comprehensive Module (71st BPSC)', 699, 'Study Book')">
+            🛒 Add to Cart
+          </button>
+          <button class="btn-sample-view" onclick="openSampleModal('Bihar Special GS Comprehensive Module')">
+            📄 Read Sample Chapter (PDF)
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 4 -->
+      <div class="item-card">
+        <div class="item-cover-wrap" style="background: linear-gradient(145deg, #F0FDF4, #DCFCE7);">
+          <span class="item-discount-tag" style="background: var(--green);">SAVE 50%</span>
+          <div class="cover" style="width: 105px; height: 150px; margin-top: 10px; border-left-color: var(--green);">
+            <small>MAINS ESSAY</small>
+            <b style="font-size: 17px;">ESSAY MASTERY</b>
+            <span style="font-size: 7px;">PHILOSOPHICAL &amp; THEMATIC</span>
+          </div>
+        </div>
+        <div class="item-body">
+          <div class="item-faculty">📘 Printed Spiral Hardcopy + E-Book</div>
+          <h3 class="item-title">UPSC Mains Essay Mastery &amp; Thematic Quotes Handbook</h3>
+          <ul class="item-features-list">
+            <li>Structuring philosophical &amp; abstract UPSC essays</li>
+            <li>50 High-scoring model essays across 8 themes</li>
+            <li>Compendium of anecdotes, statistics &amp; global analogies</li>
+            <li>Common traps that pull marks below 100</li>
+          </ul>
+          <div class="item-price-row">
+            <span class="item-price">₹499</span>
+            <span class="item-mrp">₹999</span>
+            <span class="item-pct">50% OFF</span>
+          </div>
+          <button class="btn-cart-add" onclick="addToCart('book-essay-mastery', 'UPSC Mains Essay Mastery & Thematic Quotes Handbook', 499, 'Study Book')">
+            🛒 Add to Cart
+          </button>
+          <button class="btn-sample-view" onclick="openSampleModal('UPSC Mains Essay Mastery Handbook')">
+            📄 Read Sample Chapter (PDF)
+          </button>
         </div>
       </div>
 
@@ -1075,94 +1376,111 @@
     </div>
   </section>
 
-  <!-- 10. Footer Section -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top-grid">
-        
-        <!-- Col 1: Brand & Attribution -->
-        <div>
-          <a href="#home" class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="assets/images/logo.png" alt="Bureaucrats Hive Emblem" class="brand-emblem-img" />
-            <div class="brand-text-block">
-              <span class="brand-name">Bureaucrats Hive</span>
-              <span class="brand-tagline">UPSC &amp; BPSC Mentorship</span>
-            </div>
-          </a>
-          <p class="footer-brand-bio">
-            India's premier high-accountability online civil services mentorship platform. Empowering UPSC CSE and BPSC aspirants through individual 1-on-1 mentorship, strict evaluation, and structured stage-wise test series.
-          </p>
-          <div style="font-size: 0.85rem; color: var(--gold-light); font-weight: 700;">
-            Guiding Ambitions, Building Bureaucrats
-          </div>
+  <!-- 10. Smriti Shah Institutional EdTech Footer -->
+  <footer class="edtech-footer">
+    <div class="edtech-footer-container">
+      <!-- Col 1: Brand & Bio -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+          <div class="brand-icon-edtech" style="width: 36px; height: 36px; font-size: 16px;">BH</div>
+          <span style="font-size: 18px; font-weight: 800; color: var(--ink);">Bureaucrats Hive</span>
         </div>
-
-        <!-- Col 2: Mentorship Programs -->
-        <div>
-          <h4 class="footer-col-title">Programs</h4>
-          <ul class="footer-link-list">
-            <li><a href="#pricing">UPSC Comprehensive 2026</a></li>
-            <li><a href="#pricing">71st BPSC Integrated Batch</a></li>
-            <li><a href="#pricing">Prelims Test Series (GS + CSAT)</a></li>
-            <li><a href="#pricing">Mains Daily Answer Writing</a></li>
-            <li><a href="#pricing">Ethics &amp; Essay Frameworks</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Quick Links & Portal -->
-        <div>
-          <h4 class="footer-col-title">Student Ecosystem</h4>
-          <ul class="footer-link-list">
-            <li><a href="#student-portal">Interactive Student Portal</a></li>
-            <li><a href="#methodology">Our 4-Step Methodology</a></li>
-            <li><a href="#strategy-session">Free Strategy Session</a></li>
-            <li><a href="#about">About Us &amp; Mission</a></li>
-            <li><a href="#faq">Frequently Asked Questions</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Contact & Support -->
-        <div>
-          <h4 class="footer-col-title">Connect With Us</h4>
-          <div class="footer-contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span>mentorship@bureaucratshive.com</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-            <span>WhatsApp: +91 98765 43210</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Support Hours: 9:00 AM – 9:00 PM IST</span>
-          </div>
-          <div style="margin-top: 1.25rem;">
-            <a href="#strategy-session" class="btn btn-gold btn-sm" style="width: 100%;">
-              Book Free Strategy Session
-            </a>
-          </div>
-        </div>
-
+        <p style="line-height: 1.6; margin-bottom: 12px;">
+          India's high-accountability civil services mentorship ecosystem. Delivering 1-on-1 personalized ranker guidance, 24h Mains evaluation, and toppers' study modules for UPSC CSE and BPSC.
+        </p>
+        <p style="font-size: 12px; color: var(--green); font-weight: 700;">
+          ✓ Registered Institutional Education Provider
+        </p>
       </div>
 
-      <!-- Bottom Bar -->
-      <div class="footer-bottom-bar">
-        <div>
-          &copy; 2026 <strong style="color: var(--text-white);">Bureaucrats Hive</strong>. All Rights Reserved.
-        </div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="#about" style="color: var(--text-slate);">Privacy Policy</a>
-          <a href="#about" style="color: var(--text-slate);">Terms of Service</a>
-          <a href="#about" style="color: var(--text-slate);">Refund Policy</a>
-        </div>
+      <!-- Col 2: Mentorship Programs -->
+      <div>
+        <strong>Flagship Programs</strong>
+        <p><a href="#pricing">Target UPSC CSE 2026 (Prelims + Mains)</a></p>
+        <p><a href="#pricing">71st BPSC Super-30 Integrated Cohort</a></p>
+        <p><a href="#pricing">GS Mains Daily Answer Writing (90 Days)</a></p>
+        <p><a href="#pricing">Prelims Test Series 2026 (GS + CSAT)</a></p>
+        <p><a href="#pricing">Ethics &amp; Essay Mentorship Modules</a></p>
+      </div>
+
+      <!-- Col 3: Books & Resources -->
+      <div>
+        <strong>Books &amp; Study Modules</strong>
+        <p><a href="#notes-catalog">GS Paper 4 Ethics Master Compendium</a></p>
+        <p><a href="#notes-catalog">Indian Polity Mindmaps &amp; Case Laws</a></p>
+        <p><a href="#notes-catalog">Bihar Special Comprehensive GS Module</a></p>
+        <p><a href="#notes-catalog">UPSC Mains Essay Mastery Handbook</a></p>
+        <p><a href="#student-portal">Interactive Student Portal Demo</a></p>
+      </div>
+
+      <!-- Col 4: Registered Office & Helpdesk -->
+      <div>
+        <strong>Head Office &amp; Helpdesk</strong>
+        <p>Bureaucrats Hive Educational Technologies LLP</p>
+        <p>Registered Office: Metro Tower, Sector 62, Noida, NCR Delhi 201301</p>
+        <p>Branch Office: Boring Road Crossing, Patna, Bihar 800001</p>
+        <p style="margin-top: 8px;"><strong>Student Helpline:</strong> +91 98765 43210</p>
+        <p><strong>Email:</strong> <a href="mailto:mentorship@bureaucratshive.com">mentorship@bureaucratshive.com</a></p>
+        <p style="margin-top: 10px; font-size: 11px; color: #94A3B8;">
+          🔒 256-Bit SSL Encrypted Checkout | Razorpay &amp; UPI Verified
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Legal Links -->
+    <div style="max-width: 1200px; margin: 30px auto 0; padding-top: 20px; border-top: 1px solid var(--ed-line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px;">
+      <div>
+        &copy; 2026 <strong>Bureaucrats Hive</strong>. All Rights Reserved. Guiding Ambitions, Building Bureaucrats.
+      </div>
+      <div style="display: flex; gap: 18px;">
+        <a href="#about" style="color: var(--ed-muted);">Privacy Policy</a>
+        <a href="#about" style="color: var(--ed-muted);">Terms &amp; Conditions</a>
+        <a href="#about" style="color: var(--ed-muted);">Refund Policy</a>
+        <a href="#about" style="color: var(--ed-muted);">Shipping &amp; Delivery</a>
       </div>
     </div>
   </footer>
 
+  <!-- Slide-Out Shopping Cart Drawer Overlay -->
+  <div class="cart-overlay" id="cartOverlay" onclick="if(event.target === this) closeCart();">
+    <div class="cart-drawer">
+      <div class="cart-drawer-head">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          Your Cart (<span class="cart-badge" style="position:static; display:inline-flex; width:22px; height:22px; background:var(--blue-pale); color:var(--blue);">0</span>)
+        </h3>
+        <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-drawer-body" id="cartDrawerBody">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+      <div class="cart-drawer-footer" style="padding: 20px; border-top: 1px solid var(--ed-line); background: #FAFBFD;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+          <span style="font-size: 14px; color: var(--ed-muted);">Subtotal:</span>
+          <span id="cartSubtotal" style="font-size: 20px; font-weight: 800; color: var(--ink);">₹0</span>
+        </div>
+        <div style="font-size: 11px; color: var(--green); margin-bottom: 14px; font-weight: 600;">
+          ✓ Free Express Courier Delivery Across India Applied
+        </div>
+        <button class="btn-cart-checkout" onclick="checkoutFromCart()">
+          Proceed to Secure Checkout &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Assistance Button -->
+  <a href="https://wa.me/919876543210?text=Hello%20Bureaucrats%20Hive,%20I%20want%20to%20know%20more%20about%20your%20Civil%20Services%20mentorship%20programs." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat with Mentor on WhatsApp">
+    <div class="wa-float-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </div>
+    <span class="wa-float-tooltip">Chat with Mentor on WhatsApp 💬</span>
+  </a>
+
   <!-- Scripts -->
-  <script src="js/app.js"></script>
-  <script src="js/portal.js"></script>
-  <script src="js/leadCapture.js"></script>
-  <script src="js/checkout.js"></script>
+  <script src="js/app.js?v=5"></script>
+  <script src="js/portal.js?v=5"></script>
+  <script src="js/leadCapture.js?v=5"></script>
+  <script src="js/checkout.js?v=5"></script>
 </body>
 </html>

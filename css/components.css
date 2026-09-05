@@ -1194,3 +1194,1124 @@
   }
 }
 
+/* ==========================================================================
+   SMRITI SHAH INSPIRED MODERN EDTECH STOREFRONT STYLES
+   ========================================================================== */
+
+/* 1. Launch Ribbon / Marquee Ticker */
+.launch-ribbon {
+  height: 40px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #101A4F, #1D4ED8, #101A4F);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1001;
+}
+
+.launch-ribbon a,
+.launch-ribbon a:link,
+.launch-ribbon a:visited {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .025em;
+  animation: ribbonMove 24s linear infinite;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.launch-ribbon a:hover {
+  animation-play-state: paused;
+}
+
+.launch-ribbon strong {
+  color: #FFD166 !important;
+}
+
+.launch-ribbon .dot {
+  color: #93C5FD !important;
+}
+
+@keyframes ribbonMove {
+  from { transform: translateX(100vw); }
+  to { transform: translateX(-100%); }
+}
+
+/* 2. Modern EdTech Navbar */
+.navbar-edtech {
+  height: 80px;
+  padding: 0 clamp(20px, 4vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ed-line);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand-edtech {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.brand-icon-edtech {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--gold-primary);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #101A4F, #1E293B);
+  color: var(--gold-lighter);
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(16, 26, 79, 0.2);
+  flex-shrink: 0;
+}
+
+.brand-txt-edtech {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+  font-family: var(--font-heading);
+}
+
+.brand-txt-edtech span {
+  color: var(--gold-primary);
+}
+
+.desktop-links-edtech {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.desktop-links-edtech button,
+.desktop-links-edtech a {
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: 600 15px 'Inter', sans-serif;
+  cursor: pointer;
+  padding: 10px 0;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.desktop-links-edtech button:after,
+.desktop-links-edtech a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 2px;
+  height: 2px;
+  background: var(--blue);
+  transition: 0.18s;
+}
+
+.desktop-links-edtech button:hover:after,
+.desktop-links-edtech a:hover:after {
+  right: 0;
+}
+
+.nav-actions-edtech {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 24px;
+}
+
+.track-btn-edtech {
+  border: 1.5px solid var(--ed-line);
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 30px;
+  font: 600 13px 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.track-btn-edtech:hover {
+  background: var(--blue-pale);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.cart-fab {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 9px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s;
+  box-shadow: 0 4px 16px rgba(36, 85, 245, 0.28);
+}
+
+.cart-fab:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+.cart-badge {
+  background: #fff;
+  color: var(--blue);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3. Smriti Shah Style Asymmetric Hero */
+.hero-edtech {
+  padding: 0;
+  text-align: left;
+  border-bottom: 1px solid var(--ed-line);
+  background: linear-gradient(110deg, #FBFCFF 0%, #F2F6FF 58%, #1E293B 58%, #101A4F 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-shell {
+  max-width: 1400px;
+  min-height: 620px;
+  margin: auto;
+  padding: 50px clamp(20px, 4vw, 64px) 44px;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 36px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-copy {
+  padding-top: 15px;
+}
+
+.hero-tag-edtech {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.hero-tag-edtech:after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 4px;
+  border-radius: 5px;
+  background: var(--coral);
+  margin-top: 10px;
+}
+
+.hero-edtech h1 {
+  font-size: clamp(38px, 3.8vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+  color: var(--ink);
+  margin-bottom: 20px;
+  font-family: var(--font-heading);
+}
+
+.hero-edtech h1 em {
+  color: var(--blue);
+  font-style: normal;
+}
+
+.hero-edtech p {
+  max-width: 540px;
+  margin: 0;
+  color: #364165;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.hero-cta {
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 10px;
+  border: 2px solid var(--blue);
+  font: 700 15px 'Inter', sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  transition: 0.18s;
+  text-decoration: none;
+}
+
+.hero-cta.primary {
+  background: linear-gradient(135deg, #3768FF, #1745E7);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(36, 85, 245, 0.25);
+}
+
+.hero-cta.secondary {
+  background: #fff;
+  color: var(--blue);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(36, 85, 245, 0.2);
+}
+
+.search-bar {
+  max-width: 540px;
+  margin: 24px 0 0 0;
+  background: #fff;
+  border: 1.5px solid #CFD7EB;
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 5px 18px rgba(20, 45, 120, 0.06);
+}
+
+.search-bar svg {
+  flex-shrink: 0;
+  color: var(--blue);
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  background: transparent;
+}
+
+.hero-trust {
+  margin-top: 30px;
+  max-width: 560px;
+  background: #fff;
+  border: 1px solid var(--ed-line);
+  box-shadow: var(--shadow-sm);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hero-trust div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 12px;
+  border-right: 1px solid var(--ed-line);
+}
+
+.hero-trust div:last-child {
+  border: 0;
+}
+
+.hero-trust i {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--blue-pale);
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.hero-trust strong {
+  display: block;
+  color: var(--blue);
+  font-size: 15px;
+}
+
+.hero-trust span {
+  font-size: 11px;
+  color: var(--ed-muted);
+}
+
+/* 4. Hero 3D Promotional Cards */
+.hero-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.promo-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(8, 29, 95, 0.28);
+  transition: 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+}
+
+.promo-visual {
+  height: 240px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #123BC2, #071A55);
+}
+
+.promo-card:nth-child(2) .promo-visual {
+  background: radial-gradient(circle at 25% 58%, #FF6257 0 54px, transparent 55px), linear-gradient(145deg, #FFF8F5, #F8E8E4);
+}
+
+.promo-card:nth-child(3) .promo-visual {
+  background: radial-gradient(circle at 78% 28%, #D4AF37 0 45px, transparent 46px), linear-gradient(145deg, #1E293B, #0F172A);
+}
+
+.promo-tag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px 14px;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 800;
+  font-size: 11px;
+  border-radius: 0 0 12px;
+  letter-spacing: 0.05em;
+}
+
+.promo-card:nth-child(2) .promo-tag {
+  background: var(--coral);
+}
+
+.promo-card:nth-child(3) .promo-tag {
+  background: #9E7012;
+}
+
+.cover {
+  width: 125px;
+  height: 175px;
+  margin-top: 24px;
+  padding: 24px 12px;
+  background: #FFFDF9;
+  color: #0B1746;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 14px 8px 0 -7px #D7D8E0, 16px 12px 18px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px 6px 6px 2px;
+  border-left: 4px solid #C59325;
+}
+
+.cover:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--blue);
+  left: -20px;
+  bottom: -35px;
+  opacity: 0.15;
+}
+
+.cover.bpsc:after {
+  background: var(--coral);
+}
+
+.cover.test:after {
+  background: var(--gold-primary);
+}
+
+.cover small {
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--ed-muted);
+}
+
+.cover b {
+  font-size: 20px;
+  margin-top: 16px;
+  font-family: var(--font-heading);
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.cover span {
+  font-size: 7.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: auto;
+  color: #475569;
+}
+
+.promo-info {
+  padding: 16px;
+}
+
+.promo-info h3 {
+  font-size: 17px;
+  letter-spacing: -0.4px;
+  margin-bottom: 3px;
+  color: var(--ink);
+}
+
+.promo-info > p {
+  font-size: 12px;
+  margin: 0;
+  color: #59648D;
+}
+
+.promo-info ul {
+  list-style: none;
+  margin-top: 8px;
+}
+
+.promo-info li {
+  font-size: 11px;
+  color: #303B68;
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.promo-info li:before {
+  content: "✓";
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.promo-card:nth-child(2) li:before {
+  background: var(--coral);
+}
+
+.promo-card:nth-child(3) li:before {
+  background: #9E7012;
+}
+
+/* 5. Trust Bar */
+.trust-bar-edtech {
+  background: #fff;
+  border-bottom: 1px solid var(--ed-line);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.trust-pill-edtech {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* 6. Store / Catalog Grids */
+.catalog-wrap {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 55px 24px 60px;
+}
+
+.catalog-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--ed-line);
+  padding-bottom: 12px;
+}
+
+.catalog-section-head h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.catalog-count-badge {
+  font-size: 13px;
+  color: var(--ed-muted);
+  font-weight: 500;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1100px) {
+  .items-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .items-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+
+@media (max-width: 500px) {
+  .items-grid { grid-template-columns: 1fr; }
+}
+
+.item-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--ed-line);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.item-card-top {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #101A4F, #1E293B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.item-card-top.book-top {
+  aspect-ratio: 16/11;
+  background: linear-gradient(135deg, #FFFDF9, #F1F5F9);
+  border-bottom: 1px solid var(--ed-line);
+}
+
+.item-disc-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--green);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  z-index: 2;
+}
+
+.item-tag-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.item-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.item-faculty {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.item-features-list {
+  list-style: none;
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-features-list li:before {
+  content: "•";
+  color: var(--blue);
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.item-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.item-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.item-mrp {
+  font-size: 13px;
+  color: var(--ed-muted);
+  text-decoration: line-through;
+}
+
+.item-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.btn-cart-add {
+  width: 100%;
+  background: #fff;
+  color: var(--blue);
+  border: 1.5px solid var(--blue);
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-cart-add:hover {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn-sample-view {
+  width: 100%;
+  background: transparent;
+  color: #475569;
+  border: 1px solid #D1D5DB;
+  border-radius: 10px;
+  padding: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.btn-sample-view:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* 7. Slide-Out Shopping Cart Drawer */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  backdrop-filter: blur(2px);
+}
+
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cart-drawer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 95vw;
+  background: #fff;
+  z-index: 2001;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+}
+
+.cart-overlay.open .cart-drawer {
+  transform: translateX(0);
+}
+
+.cart-drawer-head {
+  padding: 20px;
+  border-bottom: 1px solid var(--ed-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-drawer-head h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-close-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #F1F3F5;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #495057;
+}
+
+.cart-close-btn:hover {
+  background: #E9ECEF;
+}
+
+.cart-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+.cart-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ed-muted);
+}
+
+.cart-empty-state .cart-empty-icon {
+  font-size: 48px;
+  margin-bottom: 14px;
+}
+
+.cart-drawer-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #F1F3F5;
+}
+
+.cart-item-thumb {
+  width: 55px;
+  height: 70px;
+  border-radius: 8px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.cart-item-price {
+  font-size: 13px;
+  color: var(--ed-muted);
+  margin-bottom: 8px;
+}
+
+.cart-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-qty-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1.5px solid #DEE2E6;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--blue);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s;
+}
+
+.cart-qty-btn:hover {
+  border-color: var(--blue);
+  background: var(--blue-pale);
+}
+
+.cart-qty-val {
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 18px;
+  text-align: center;
+}
+
+.cart-drawer-foot {
+  padding: 20px;
+  border-top: 2px solid #F1F3F5;
+  background: #F8FAFC;
+}
+
+.cart-subtotal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.cart-subtotal-row span:first-child {
+  font-size: 14px;
+  color: var(--ed-muted);
+  font-weight: 500;
+}
+
+.cart-subtotal-row span:last-child {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.btn-cart-checkout {
+  width: 100%;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-cart-checkout:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+/* 8. Floating WhatsApp Assistance Button */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.wa-float-btn {
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s;
+  animation: waPulse 2s ease-in-out infinite;
+}
+
+.wa-float:hover .wa-float-btn {
+  transform: scale(1.1);
+}
+
+.wa-float-tooltip {
+  background: #1A1A1A;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.2s;
+  pointer-events: none;
+}
+
+.wa-float:hover .wa-float-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45); }
+  50% { box-shadow: 0 4px 26px rgba(37, 211, 102, 0.75); }
+}
+
+/* 9. EdTech Footer Grid */
+.edtech-footer {
+  background: #fff;
+  border-top: 1px solid var(--ed-line);
+  padding: 45px 20px 30px;
+  color: var(--ed-muted);
+  font-size: 13px;
+}
+
+.edtech-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+.edtech-footer strong {
+  color: var(--ink);
+  font-size: 15px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.edtech-footer a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.edtech-footer a:hover {
+  text-decoration: underline;
+}
+
+/* 10. Responsive Overrides for EdTech Layout */
+@media (max-width: 1100px) {
+  .desktop-links-edtech { display: none; }
+  .hero-edtech { background: linear-gradient(#FBFCFF, #EDF3FF); }
+  .hero-shell { grid-template-columns: 1fr; min-height: auto; }
+  .hero-copy { max-width: 760px; }
+  .hero-products { max-width: 760px; margin-top: 20px; }
+}
+
+@media (max-width: 680px) {
+  .navbar-edtech { height: auto; min-height: 68px; padding: 10px 16px; }
+  .brand-txt-edtech { font-size: 18px; }
+  .brand-icon-edtech { width: 38px; height: 38px; font-size: 16px; }
+  .nav-actions-edtech { gap: 6px; margin-left: auto; }
+  .track-btn-edtech span { display: none; }
+  .hero-shell { padding: 35px 16px; }
+  .hero-edtech h1 { font-size: 34px; letter-spacing: -1.2px; }
+  .hero-trust { grid-template-columns: 1fr; gap: 8px; }
+  .hero-trust div { border-right: 0; border-bottom: 1px solid var(--ed-line); padding: 8px 0; }
+  .hero-products { grid-template-columns: 1fr; }
+  .promo-visual { height: 260px; }
+  .trust-bar-edtech { gap: 14px; font-size: 12px; }
+}
+

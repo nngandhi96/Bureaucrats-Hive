@@ -2,6 +2,169 @@
  * Bureaucrats Hive - Core Application Logic
  */
 
+/* ==========================================================================
+   SMRITI SHAH STYLE CART & CATALOG LOGIC (IMMEDIATE GLOBAL AVAILABILITY)
+   ========================================================================== */
+
+let cartItems = [];
+
+window.openCart = function() {
+  const overlay = document.getElementById('cartOverlay');
+  if (overlay) {
+    overlay.classList.add('open');
+    renderCart();
+  }
+};
+
+window.closeCart = function() {
+  const overlay = document.getElementById('cartOverlay');
+  if (overlay) {
+    overlay.classList.remove('open');
+  }
+};
+
+window.addToCart = function(id, title, price, subtitle) {
+  const existing = cartItems.find(item => item.id === id);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cartItems.push({
+      id: id,
+      title: title,
+      price: price,
+      subtitle: subtitle || 'Bureaucrats Hive',
+      qty: 1
+    });
+  }
+  updateCartBadge();
+  window.openCart();
+  if (typeof window.showToast === 'function') {
+    window.showToast(`${title} added to cart!`, 'success');
+  }
+};
+
+window.changeQty = function(id, delta) {
+  const item = cartItems.find(i => i.id === id);
+  if (item) {
+    item.qty += delta;
+    if (item.qty <= 0) {
+      cartItems = cartItems.filter(i => i.id !== id);
+    }
+  }
+  updateCartBadge();
+  renderCart();
+};
+
+function updateCartBadge() {
+  const totalCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
+  const badges = document.querySelectorAll('.cart-badge');
+  badges.forEach(badge => {
+    badge.textContent = totalCount;
+  });
+}
+
+function renderCart() {
+  const container = document.getElementById('cartDrawerBody');
+  const subtotalEl = document.getElementById('cartSubtotal');
+  if (!container) return;
+
+  if (cartItems.length === 0) {
+    container.innerHTML = `
+      <div class="cart-empty-state">
+        <div class="cart-empty-icon">🛒</div>
+        <h4>Your cart is empty</h4>
+        <p style="font-size:13px; margin-top:6px;">Explore our UPSC &amp; BPSC mentorship courses and modules to add items.</p>
+      </div>
+    `;
+    if (subtotalEl) subtotalEl.textContent = '₹0';
+    return;
+  }
+
+  let subtotal = 0;
+  container.innerHTML = cartItems.map(item => {
+    const itemTotal = item.price * item.qty;
+    subtotal += itemTotal;
+    return `
+      <div class="cart-drawer-item">
+        <div class="cart-item-thumb">📖</div>
+        <div class="cart-item-info">
+          <div class="cart-item-title">${item.title}</div>
+          <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')}</div>
+          <div class="cart-qty-row">
+            <button class="cart-qty-btn" onclick="changeQty('${item.id}', -1)" aria-label="Decrease quantity">-</button>
+            <span class="cart-qty-val">${item.qty}</span>
+            <button class="cart-qty-btn" onclick="changeQty('${item.id}', 1)" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+        <div style="font-weight:700; color:var(--ink); font-size:14px; margin-left:auto;">
+          ₹${itemTotal.toLocaleString('en-IN')}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  if (subtotalEl) {
+    subtotalEl.textContent = '₹' + subtotal.toLocaleString('en-IN');
+  }
+}
+
+window.checkoutFromCart = function() {
+  if (cartItems.length === 0) {
+    if (typeof window.showToast === 'function') {
+      window.showToast('Your cart is empty! Please add a course or module.', 'gold');
+    }
+    return;
+  }
+  window.closeCart();
+  const firstCourse = cartItems[0];
+  if (typeof window.openCheckoutModal === 'function') {
+    window.openCheckoutModal(firstCourse.id);
+  } else {
+    window.location.hash = '#pricing';
+    if (typeof window.showToast === 'function') {
+      window.showToast('Proceeding to fee structure & checkout...', 'success');
+    }
+  }
+};
+
+/* Instant Search Filter for Courses & Notes */
+window.filterItems = function(query) {
+  const q = (query || '').toLowerCase().trim();
+  const allCards = document.querySelectorAll('.item-card');
+  let matchedCount = 0;
+
+  allCards.forEach(card => {
+    const title = (card.querySelector('.item-title')?.textContent || '').toLowerCase();
+    const faculty = (card.querySelector('.item-faculty')?.textContent || '').toLowerCase();
+    const desc = (card.querySelector('.item-features-list')?.textContent || '').toLowerCase();
+    
+    if (!q || title.includes(q) || faculty.includes(q) || desc.includes(q)) {
+      card.style.display = 'flex';
+      matchedCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  const countBadge = document.getElementById('searchCountResult');
+  if (countBadge) {
+    countBadge.textContent = q ? `(${matchedCount} matching)` : '';
+  }
+};
+
+/* Sample Preview Trigger */
+window.openSampleModal = function(title) {
+  if (typeof window.showToast === 'function') {
+    window.showToast(`Opening sample syllabus & preview for: ${title}`, 'success');
+  }
+  const modal = document.getElementById('leadCaptureModal');
+  if (modal) {
+    const titleEl = modal.querySelector('.modal-title');
+    if (titleEl) titleEl.textContent = `Download Sample: ${title}`;
+    modal.classList.add('open');
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initFaqAccordion();
@@ -11,13 +174,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* 1. Header scroll and mobile menu */
 function initNavbar() {
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector('.site-header') || document.querySelector('.navbar-edtech');
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileLinks = document.querySelectorAll('.mobile-drawer .nav-link, .mobile-drawer .btn');
 
   // Sticky header shadow on scroll
   window.addEventListener('scroll', () => {
+    if (!header) return;
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
@@ -234,3 +398,4 @@ window.showToast = function(message, type = 'gold') {
     setTimeout(() => toast.remove(), 300);
   }, 4000);
 };
+

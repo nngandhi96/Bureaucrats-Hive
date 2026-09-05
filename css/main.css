@@ -35,6 +35,16 @@
   --text-muted: #64748B;
   --text-gold: #9E7012;
 
+  /* Modern EdTech Tokens (Inspired by Smriti Shah) */
+  --ink: #101A4F;
+  --blue: #2455F5;
+  --blue-dark: #173FD2;
+  --blue-pale: #EDF2FF;
+  --coral: #FF6257;
+  --green: #10A36B;
+  --ed-muted: #5F6989;
+  --ed-line: #E4E8F3;
+
   /* State & Status Colors */
   --color-success: #059669;
   --color-success-bg: rgba(5, 150, 105, 0.12);

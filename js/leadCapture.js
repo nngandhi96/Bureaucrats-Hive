@@ -53,7 +53,7 @@ function initLeadForm() {
       `Hello Bureaucrats Hive Mentorship Team! My name is ${name}. I am preparing for ${targetExam} (${targetYear}). I would like to schedule my Free 1-on-1 Strategy Session with a senior mentor.`
     );
     
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=919876543210&text=${whatsappMsg}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=919754761682&text=${whatsappMsg}`;
 
     // Reset Form
     leadForm.reset();

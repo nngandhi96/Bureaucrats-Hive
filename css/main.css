@@ -4,64 +4,64 @@
    ========================================================================== */
 
 :root {
-  /* Brand Backgrounds - Matching Logo Canvas */
-  --bg-primary: #0E1624;
-  --bg-secondary: #131E31;
-  --bg-surface: #17243B;
-  --bg-surface-elevated: #1D2D49;
-  --bg-surface-glass: rgba(19, 30, 49, 0.75);
-  --bg-card-hover: rgba(29, 45, 73, 0.92);
+  /* Brand Backgrounds - Prestigious White & Ivory Luxury Theme */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F1F5F9;
+  --bg-surface-glass: rgba(255, 255, 255, 0.94);
+  --bg-card-hover: rgba(255, 255, 255, 1);
 
-  /* Gold Metallic Accents - Precise Logo Sampled 3D Tones */
-  --gold-primary: #D4AF37;
-  --gold-light: #F3D279;
-  --gold-lighter: #FFF6CD;
-  --gold-dark: #8C6318;
-  --gold-deep: #5E410B;
-  --gold-muted: rgba(212, 175, 55, 0.14);
-  --gold-border: rgba(212, 175, 55, 0.28);
-  --gold-border-glow: rgba(243, 210, 121, 0.65);
+  /* Gold Metallic Accents - Calibrated for High-Contrast on White */
+  --gold-primary: #C59325;
+  --gold-light: #9B6F12;
+  --gold-lighter: #FFF9E6;
+  --gold-dark: #7A5308;
+  --gold-deep: #4E3403;
+  --gold-muted: rgba(197, 147, 37, 0.12);
+  --gold-border: rgba(197, 147, 37, 0.32);
+  --gold-border-glow: rgba(197, 147, 37, 0.6);
   
   /* 3D Metallic Gradients */
-  --gold-gradient: linear-gradient(135deg, #FFF6CD 0%, #F3D279 24%, #D4AF37 52%, #A87A1E 80%, #68480D 100%);
-  --gold-gradient-hover: linear-gradient(135deg, #FFFFFF 0%, #FFF4C2 20%, #F5D57E 45%, #D4AF37 75%, #8C6318 100%);
-  --gold-text-gradient: linear-gradient(135deg, #FFF9D9 0%, #F3D279 30%, #D4AF37 68%, #A87A1E 100%);
-  --gold-border-gradient: linear-gradient(135deg, rgba(255, 246, 205, 0.7) 0%, rgba(212, 175, 55, 0.4) 40%, rgba(140, 99, 24, 0.5) 100%);
+  --gold-gradient: linear-gradient(135deg, #FFF0B8 0%, #ECC359 30%, #C59325 68%, #93670F 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #FFFFFF 0%, #FFEBA3 25%, #DFB448 60%, #B07F19 100%);
+  --gold-text-gradient: linear-gradient(135deg, #875C0B 0%, #C59325 50%, #6E4904 100%);
+  --gold-border-gradient: linear-gradient(135deg, rgba(197, 147, 37, 0.6) 0%, rgba(243, 210, 121, 0.35) 45%, rgba(140, 99, 24, 0.5) 100%);
 
-  /* Text Colors */
-  --text-white: #FFFFFF;
-  --text-ivory: #F4F7FC;
-  --text-slate: #C0CCE2;
-  --text-muted: #8292AD;
-  --text-gold: #F3D279;
+  /* Text Colors - High Contrast for Crisp Readability on White */
+  --text-white: #0F172A;
+  --text-ivory: #1E293B;
+  --text-slate: #475569;
+  --text-muted: #64748B;
+  --text-gold: #9E7012;
 
   /* State & Status Colors */
-  --color-success: #10B981;
-  --color-success-bg: rgba(16, 185, 129, 0.14);
-  --color-warning: #F59E0B;
-  --color-info: #38BDF8;
-  --color-danger: #EF4444;
+  --color-success: #059669;
+  --color-success-bg: rgba(5, 150, 105, 0.12);
+  --color-warning: #D97706;
+  --color-info: #0284C7;
+  --color-danger: #DC2626;
 
   /* Typography */
   --font-heading: 'Cinzel', 'Montserrat', serif, sans-serif;
   --font-subheading: 'Montserrat', sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Realistic 3D Shadows, Bevels & Glows */
-  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.55), 0 0 1px 1px rgba(212, 175, 55, 0.15);
-  --shadow-lg: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(212, 175, 55, 0.22);
-  --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
-  --shadow-gold-lg: 0 0 50px rgba(212, 175, 55, 0.45);
-  --shadow-inner-gold: inset 0 1px 1px rgba(255, 246, 205, 0.25), inset 0 -1px 1px rgba(0, 0, 0, 0.4);
-  --shadow-btn-gold: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 0 rgba(94, 65, 11, 0.6), 0 6px 22px rgba(212, 175, 55, 0.42);
+  /* Realistic 3D Shadows, Bevels & Glows - Crisp for Light Theme */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(197, 147, 37, 0.16);
+  --shadow-lg: 0 20px 40px -8px rgba(15, 23, 42, 0.12), 0 0 1px 1px rgba(197, 147, 37, 0.22);
+  --shadow-gold: 0 8px 24px rgba(197, 147, 37, 0.25);
+  --shadow-gold-lg: 0 14px 40px rgba(197, 147, 37, 0.35);
+  --shadow-inner-gold: inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(197, 147, 37, 0.2);
+  --shadow-btn-gold: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -2px 0 rgba(122, 83, 8, 0.5), 0 4px 16px rgba(197, 147, 37, 0.35);
 
   /* Borders & Radius */
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-full: 9999px;
-  --border-glass: 1px solid rgba(255, 255, 255, 0.09);
+  --border-glass: 1px solid rgba(15, 23, 42, 0.08);
   --border-gold: 1px solid var(--gold-border);
 
   /* Transitions */
@@ -80,7 +80,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -95,7 +95,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ambient Background Canvas / Vignette & Warm Gold Lighting */
+/* Ambient Background Canvas / Subtle Warm Gold Luster */
 body::before {
   content: '';
   position: fixed;
@@ -104,10 +104,10 @@ body::before {
   width: 100vw;
   height: 100vh;
   background: 
-    radial-gradient(circle at 18% 12%, rgba(243, 210, 121, 0.09) 0%, transparent 45%),
-    radial-gradient(circle at 82% 28%, rgba(29, 45, 73, 0.7) 0%, transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(8, 12, 20, 0.75) 100%);
+    radial-gradient(circle at 18% 12%, rgba(212, 175, 55, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 82% 28%, rgba(226, 232, 240, 0.7) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(212, 175, 55, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(241, 245, 249, 0.8) 100%);
   pointer-events: none;
   z-index: -1;
 }
@@ -116,7 +116,7 @@ body::before {
 .bg-honeycomb-pattern {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 66L0 50L0 17L28 1L56 17L56 50L28 66L28 97' fill='none' stroke='rgba(212,175,55,0.08)' stroke-width='1.2'/%3E%3Cpath d='M28 0L28 33L56 49L56 82L28 98L0 82L0 49L28 33' fill='none' stroke='rgba(212,175,55,0.08)' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 66L0 50L0 17L28 1L56 17L56 50L28 66L28 97' fill='none' stroke='rgba(180,130,24,0.06)' stroke-width='1.2'/%3E%3Cpath d='M28 0L28 33L56 49L56 82L28 98L0 82L0 49L28 33' fill='none' stroke='rgba(180,130,24,0.06)' stroke-width='1.2'/%3E%3C/svg%3E");
   background-size: 56px 97px;
   opacity: 0.65;
   pointer-events: none;
@@ -190,9 +190,9 @@ img, svg {
 }
 
 .section-alt {
-  background: linear-gradient(180deg, rgba(13, 27, 42, 0.8) 0%, rgba(10, 25, 47, 0.95) 100%);
-  border-top: 1px solid rgba(212, 175, 55, 0.1);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
+  border-top: 1px solid rgba(197, 147, 37, 0.15);
+  border-bottom: 1px solid rgba(197, 147, 37, 0.15);
 }
 
 .section-header {
@@ -232,9 +232,9 @@ img, svg {
   border-radius: var(--radius-md);
   padding: 2rem;
   box-shadow: 
-    0 12px 36px -8px rgba(0, 0, 0, 0.6),
-    inset 0 1px 1px rgba(255, 246, 205, 0.15),
-    inset 0 0 20px rgba(212, 175, 55, 0.04);
+    0 10px 30px -6px rgba(15, 23, 42, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 0 20px rgba(197, 147, 37, 0.04);
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
@@ -248,7 +248,7 @@ img, svg {
   right: 0;
   height: 2px;
   background: var(--gold-gradient);
-  opacity: 0.6;
+  opacity: 0.8;
   transition: opacity var(--transition-normal);
 }
 
@@ -256,9 +256,9 @@ img, svg {
   transform: translateY(-5px);
   border-color: var(--gold-border-glow);
   box-shadow: 
-    0 22px 50px -10px rgba(0, 0, 0, 0.75),
-    0 0 25px rgba(212, 175, 55, 0.25),
-    inset 0 1px 2px rgba(255, 246, 205, 0.35);
+    0 18px 45px -8px rgba(15, 23, 42, 0.14),
+    0 0 22px rgba(197, 147, 37, 0.22),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .glass-card:hover::before {
@@ -290,45 +290,45 @@ img, svg {
   font-weight: 800;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
   box-shadow: var(--shadow-btn-gold);
-  border: 1px solid rgba(255, 246, 205, 0.4);
+  border: 1px solid rgba(255, 246, 205, 0.6);
 }
 
 .btn-gold:hover {
   background: var(--gold-gradient-hover);
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
     inset 0 -2px 0 rgba(94, 65, 11, 0.7),
-    0 8px 30px rgba(212, 175, 55, 0.6);
+    0 8px 30px rgba(197, 147, 37, 0.5);
   transform: translateY(-2px);
   color: #0A0702;
 }
 
 .btn-outline-gold {
-  background: rgba(212, 175, 55, 0.08);
+  background: #FFFFFF;
   border: 1.5px solid var(--gold-primary);
   color: var(--gold-light);
-  box-shadow: inset 0 1px 1px rgba(255, 246, 205, 0.15), 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(197, 147, 37, 0.12);
 }
 
 .btn-outline-gold:hover {
   background: var(--gold-muted);
   border-color: var(--gold-light);
-  color: #FFFFFF;
-  box-shadow: var(--shadow-gold), inset 0 1px 2px rgba(255, 246, 205, 0.3);
+  color: var(--gold-dark);
+  box-shadow: var(--shadow-gold), inset 0 1px 2px rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: var(--bg-surface-elevated);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(15, 23, 42, 0.15);
   color: var(--text-ivory);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 2px 8px rgba(15, 23, 42, 0.06);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--gold-border);
-  color: #FFFFFF;
+  background: #F8FAFC;
+  border-color: var(--gold-primary);
+  color: var(--text-white);
   transform: translateY(-2px);
 }
 

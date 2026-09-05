@@ -7,14 +7,14 @@
   border: 1.5px solid var(--gold-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 45px rgba(212, 175, 55, 0.2), inset 0 1px 2px rgba(255, 246, 205, 0.15);
+  box-shadow: 0 16px 45px -8px rgba(15, 23, 42, 0.1), 0 0 35px rgba(197, 147, 37, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 /* Portal Window Header */
 .portal-top-header {
-  background: #090F1B;
+  background: #F8FAFC;
   padding: 1rem 1.75rem;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(197, 147, 37, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,8 +38,8 @@
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  color: var(--gold-light);
-  box-shadow: inset 0 1px 1px rgba(255, 246, 205, 0.3), 0 0 12px rgba(212, 175, 55, 0.3);
+  color: var(--gold-dark);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 0 12px rgba(197, 147, 37, 0.2);
 }
 
 .portal-student-name {
@@ -50,11 +50,12 @@
 
 .portal-batch-tag {
   font-size: 0.75rem;
-  color: var(--gold-light);
-  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold-dark);
+  background: rgba(197, 147, 37, 0.12);
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(197, 147, 37, 0.25);
+  font-weight: 600;
 }
 
 .portal-nav-tabs {
@@ -66,8 +67,8 @@
 }
 
 .portal-tab-btn {
-  background: var(--bg-surface-elevated);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.1);
   color: var(--text-slate);
   padding: 0.5rem 1rem;
   border-radius: var(--radius-sm);
@@ -88,15 +89,15 @@
 
 .portal-tab-btn.active {
   background: var(--gold-muted);
-  border-color: var(--gold-light);
-  color: var(--gold-light);
-  box-shadow: 0 0 14px rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
+  box-shadow: 0 0 14px rgba(197, 147, 37, 0.2);
 }
 
 /* Portal Content Body */
 .portal-content-body {
   padding: 2rem;
-  background: radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.05) 0%, rgba(19, 30, 49, 0.96) 100%);
+  background: radial-gradient(circle at 90% 10%, rgba(254, 249, 231, 0.7) 0%, #FFFFFF 100%);
   min-height: 450px;
 }
 
@@ -235,8 +236,9 @@
 }
 
 .answer-sheet-preview {
-  background: #0B132B;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: #FFFDF9;
+  border: 1.5px solid rgba(197, 147, 37, 0.35);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
   border-radius: var(--radius-md);
   padding: 1.5rem;
   position: relative;
@@ -244,34 +246,35 @@
 }
 
 .sample-answer-header {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+  border-bottom: 1px dashed rgba(15, 23, 42, 0.15);
   padding-bottom: 0.85rem;
   margin-bottom: 1rem;
   font-family: var(--font-body);
 }
 
 .mentor-annotation {
-  background: rgba(239, 68, 68, 0.15);
-  border-left: 3px solid #EF4444;
+  background: rgba(239, 68, 68, 0.08);
+  border-left: 3px solid #DC2626;
   padding: 0.5rem 0.75rem;
   font-size: 0.85rem;
-  color: #FCA5A5;
+  color: #B91C1C;
   margin: 0.75rem 0;
   font-family: var(--font-body);
   border-radius: 0 6px 6px 0;
 }
 
 .mentor-annotation.praise {
-  background: rgba(16, 185, 129, 0.15);
-  border-left-color: #10B981;
-  color: #6EE7B7;
+  background: rgba(5, 150, 105, 0.08);
+  border-left-color: #059669;
+  color: #047857;
 }
 
 .eval-scorecard {
-  background: var(--bg-surface-elevated);
+  background: #FFFFFF;
   border: 1px solid var(--gold-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
 .eval-score-total {
@@ -286,7 +289,7 @@
   font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 900;
-  color: var(--gold-light);
+  color: var(--gold-dark);
 }
 
 .eval-rubric-row {
@@ -311,8 +314,9 @@
 }
 
 .analytic-card {
-  background: var(--bg-surface-elevated);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
   border-radius: var(--radius-sm);
   padding: 1.25rem;
   text-align: center;
@@ -322,7 +326,7 @@
   font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--gold-light);
+  color: var(--gold-dark);
 }
 
 .analytic-lbl {
@@ -345,7 +349,7 @@
 .subject-bar-track {
   width: 100%;
   height: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.08);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
@@ -361,8 +365,9 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  background: var(--bg-surface-elevated);
+  background: #FFFFFF;
   border: 1px solid var(--gold-border);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
   border-radius: var(--radius-md);
   padding: 1.25rem;
   margin-bottom: 1.5rem;
@@ -378,7 +383,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.35rem;
-  color: var(--gold-light);
+  color: var(--gold-dark);
 }
 
 .slots-grid {
@@ -389,8 +394,8 @@
 }
 
 .slot-btn {
-  background: var(--bg-surface-elevated);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.12);
   color: var(--text-ivory);
   padding: 0.75rem 0.5rem;
   border-radius: var(--radius-sm);
@@ -402,12 +407,13 @@
 
 .slot-btn:hover {
   border-color: var(--gold-primary);
+  background: #F8FAFC;
 }
 
 .slot-btn.selected {
   background: var(--gold-muted);
-  border-color: var(--gold-light);
-  color: var(--gold-light);
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
   font-weight: 700;
 }
 

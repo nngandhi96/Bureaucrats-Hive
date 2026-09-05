@@ -2203,38 +2203,41 @@
   transform: translateY(-1px);
 }
 
-/* 8. Floating WhatsApp Assistance Button */
+/* 8. Floating WhatsApp Assistance Button (Positioned Bottom-Right with Official Branding) */
 .wa-float {
   position: fixed;
   bottom: 24px;
-  left: 20px;
+  right: 24px;
+  left: auto;
   z-index: 1500;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
   text-decoration: none;
 }
 
 .wa-float-btn {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   background: #25D366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
-  transition: transform 0.2s;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   animation: waPulse 2s ease-in-out infinite;
 }
 
 .wa-float:hover .wa-float-btn {
   transform: scale(1.1);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.65);
 }
 
 .wa-float-tooltip {
-  background: #1A1A1A;
+  background: #111827;
   color: #fff;
   font-size: 13px;
   font-weight: 600;
@@ -2242,9 +2245,11 @@
   border-radius: 20px;
   white-space: nowrap;
   opacity: 0;
-  transform: translateX(-8px);
-  transition: all 0.2s;
+  transform: translateX(10px);
+  transition: all 0.25s ease;
   pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .wa-float:hover .wa-float-tooltip {
@@ -2253,8 +2258,8 @@
 }
 
 @keyframes waPulse {
-  0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45); }
-  50% { box-shadow: 0 4px 26px rgba(37, 211, 102, 0.75); }
+  0%, 100% { box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45); }
+  50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8); }
 }
 
 /* 9. EdTech Footer Grid */

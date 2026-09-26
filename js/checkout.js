@@ -351,8 +351,8 @@ function showReceiptModal(name, planName, amount, email, phone) {
         Your Student Portal login credentials and personal mentor allocation details have been sent to <strong>${email}</strong> and WhatsApp.
       </p>
 
-      <button class="btn btn-gold" style="width: 100%;" onclick="document.getElementById('receiptModal').classList.remove('open'); window.location.href='#student-portal';">
-        Enter Student Portal Now
+      <button class="btn btn-gold" style="width: 100%;" onclick="document.getElementById('receiptModal').classList.remove('open'); openAuthModal();">
+        Go to Student Login
       </button>
     </div>
   `;

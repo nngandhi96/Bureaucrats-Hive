@@ -27,9 +27,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css?v=10" />
-  <link rel="stylesheet" href="css/components.css?v=10" />
-  <link rel="stylesheet" href="css/portal.css?v=10" />
+  <link rel="stylesheet" href="css/main.css?v=11" />
+  <link rel="stylesheet" href="css/components.css?v=11" />
 </head>
 <body>
 
@@ -55,7 +54,6 @@
       <a href="#methodology">Model</a>
       <a href="#accountability">Daily Rhythm</a>
       <a href="#pricing">Programs &amp; Fees</a>
-      <a href="#student-portal">Portal</a>
       <a href="#faq">FAQs</a>
     </nav>
 
@@ -80,7 +78,6 @@
       <a href="#methodology" class="nav-link">Mentorship Model</a>
       <a href="#accountability" class="nav-link">Daily Rhythm &amp; Rules</a>
       <a href="#pricing" class="nav-link">Programs &amp; Pricing</a>
-      <a href="#student-portal" class="nav-link">Student Portal Demo</a>
       <a href="#faq" class="nav-link">FAQs</a>
       <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
         <button onclick="openAuthModal();" class="btn btn-gold" style="width: 100%;">Student Login</button>
@@ -498,7 +495,7 @@
             </ul>
           </div>
           <div style="margin-top: 1.5rem;">
-            <a href="#student-portal" class="btn btn-outline-gold btn-sm">View Sample Evaluated Copy &rarr;</a>
+            <a href="#pricing" class="btn btn-outline-gold btn-sm">Explore Mains Evaluation Programs &rarr;</a>
           </div>
         </div>
 
@@ -528,282 +525,6 @@
           <div style="margin-top: 1.5rem;">
             <a href="#pricing" class="btn btn-outline-gold btn-sm">View BPSC Modules &rarr;</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. Interactive Student Portal Demo Section -->
-  <section class="section" id="student-portal">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Interactive Preview</span>
-        <h2>Inside the Bureaucrats Hive Student Portal</h2>
-        <p class="section-subtitle">Experience how our enrolled aspirants manage their daily preparation, receive mentor redlines, track mock test accuracy, and schedule 1-on-1 strategy sessions.</p>
-      </div>
-
-      <!-- Portal Window Mockup -->
-      <div class="portal-showcase-box">
-        
-        <!-- Portal Window Topbar -->
-        <div class="portal-top-header">
-          <div class="portal-user-badge">
-            <div class="portal-avatar">RS</div>
-            <div>
-              <div class="portal-student-name">Rahul Sharma <span class="portal-batch-tag">UPSC 2026 Batch A-1</span></div>
-              <div style="font-size: 0.75rem; color: var(--text-slate);">Assigned Mentor: Dr. Alok Verma (Ex-Consultant, UPSC Evaluator)</div>
-            </div>
-          </div>
-
-          <!-- Navigation Tabs -->
-          <div class="portal-nav-tabs">
-            <button class="portal-tab-btn active" data-tab="tab-daily-targets">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              Daily Study Targets
-            </button>
-            <button class="portal-tab-btn" data-tab="tab-mains-eval">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
-              Evaluated Answer Sheet
-            </button>
-            <button class="portal-tab-btn" data-tab="tab-analytics">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-              Mock Test Analytics
-            </button>
-            <button class="portal-tab-btn" data-tab="tab-mentor-booking">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              1-on-1 Mentor Slot
-            </button>
-          </div>
-        </div>
-
-        <!-- Portal Body Panels -->
-        <div class="portal-content-body">
-          
-          <!-- TAB 1: Daily Targets Checklist -->
-          <div class="portal-tab-panel active" id="tab-daily-targets">
-            <div class="tracker-header">
-              <div>
-                <h4 style="font-size: 1.15rem; color: var(--text-white);">Today's Mentorship Micro-Targets (Day 42)</h4>
-                <p style="font-size: 0.85rem; color: var(--text-slate);">Click checkboxes to mark tasks completed and log your streak.</p>
-              </div>
-              <div style="display: flex; align-items: center; gap: 1rem;">
-                <span id="portalStreakCount" class="streak-counter">🔥 14 Days Streak Active</span>
-                <span id="portalProgressPercent" style="font-size: 0.85rem; color: var(--gold-light); font-weight: 700;">66% Completed</span>
-              </div>
-            </div>
-
-            <div class="progress-bar-container">
-              <div class="progress-bar-fill" style="width: 66%;"></div>
-            </div>
-
-            <div class="task-list">
-              <div class="task-item completed">
-                <div class="task-left">
-                  <div class="custom-checkbox">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
-                  <div>
-                    <div class="task-info-title">Polity: Read Lakshmikanth Ch. 18-20 (Parliament &amp; Speaker Powers)</div>
-                    <div class="task-info-tag">Core GS-2 • Static Revision</div>
-                  </div>
-                </div>
-                <div class="task-time">02 hrs • Completed</div>
-              </div>
-
-              <div class="task-item completed">
-                <div class="task-left">
-                  <div class="custom-checkbox">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
-                  <div>
-                    <div class="task-info-title">The Hindu Editorial Synthesis: Judicial Independence &amp; Collegium System</div>
-                    <div class="task-info-tag">Current Affairs • Daily Brief</div>
-                  </div>
-                </div>
-                <div class="task-time">45 mins • Completed</div>
-              </div>
-
-              <div class="task-item">
-                <div class="task-left">
-                  <div class="custom-checkbox"></div>
-                  <div>
-                    <div class="task-info-title">Mains Daily Answer: GS-2 Question on Cooperative Federalism &amp; Finance Commission</div>
-                    <div class="task-info-tag">Mains Writing • Upload Scan for Review</div>
-                  </div>
-                </div>
-                <div class="task-time">30 mins • Pending</div>
-              </div>
-
-              <div class="task-item">
-                <div class="task-left">
-                  <div class="custom-checkbox"></div>
-                  <div>
-                    <div class="task-info-title">CSAT Practice: 15 Reading Comprehension &amp; Number Series Questions</div>
-                    <div class="task-info-tag">CSAT Aptitude • Prelims Paper-2</div>
-                  </div>
-                </div>
-                <div class="task-time">45 mins • Pending</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- TAB 2: Evaluated Answer Sheet Preview -->
-          <div class="portal-tab-panel" id="tab-mains-eval">
-            <div class="eval-grid">
-              
-              <!-- Left: Evaluated Sheet Sample -->
-              <div class="answer-sheet-preview">
-                <div class="sample-answer-header">
-                  <div style="font-size: 0.8rem; color: var(--gold-light); font-weight: 700;">QUESTION GS-2 (15 MARKS - 250 WORDS):</div>
-                  <p style="color: var(--text-white); font-size: 0.9rem; margin-top: 0.3rem;">
-                    "The Office of the Governor has often become a bone of contention between the Centre and States. Discuss the constitutional role, recent controversies, and key recommendations of Sarkaria &amp; Punchhi Commissions."
-                  </p>
-                </div>
-
-                <div style="font-size: 0.85rem; line-height: 1.6; color: #CBD5E1;">
-                  <p><strong>Aspirant Answer Extract:</strong> Under Article 153 of the Constitution, there shall be a Governor for each state. The Governor acts as the constitutional head of the state as well as a vital link between Union and State...</p>
-                  
-                  <div class="mentor-annotation praise">
-                    ✔ <strong>Mentor Note:</strong> Strong opening mentioning Art 153 and dual constitutional role. Clean and precise definition.
-                  </div>
-
-                  <p><strong>Body:</strong> The constitutional role includes discretionary powers under Article 163, reservation of bills under Article 200, and recommending President's rule under Article 356...</p>
-
-                  <div class="mentor-annotation">
-                    ⚠ <strong>Mentor Redline:</strong> Mention recent SC judgment in <em>State of Punjab v. Principal Secretary to Governor (2023)</em> regarding Article 200 timeline. Include a 3-point diagram on Sarkaria Commission recommendations.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right: Evaluation Scorecard -->
-              <div class="eval-scorecard">
-                <div class="eval-score-total">
-                  <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-slate);">Awarded Score</div>
-                  <div class="score-num">9.5 <span style="font-size: 1.1rem; color: var(--text-slate);">/ 15</span></div>
-                  <div style="font-size: 0.75rem; color: #10B981; font-weight: 700;">Above Average (Top 12% Cohort)</div>
-                </div>
-
-                <div style="margin-bottom: 1.25rem;">
-                  <div class="eval-rubric-row">
-                    <span>Introduction &amp; Definition:</span>
-                    <span>3.0 / 3.0</span>
-                  </div>
-                  <div class="eval-rubric-row">
-                    <span>Constitutional Articles &amp; Data:</span>
-                    <span>2.5 / 4.0</span>
-                  </div>
-                  <div class="eval-rubric-row">
-                    <span>Sarkaria/Punchhi Recommendations:</span>
-                    <span>2.0 / 4.0</span>
-                  </div>
-                  <div class="eval-rubric-row">
-                    <span>Structure &amp; Conclusion:</span>
-                    <span>2.0 / 4.0</span>
-                  </div>
-                </div>
-
-                <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.85rem; font-size: 0.82rem; color: var(--text-slate);">
-                  <strong style="color: var(--gold-light);">Mentor Verdict:</strong> Good conceptual clarity. Focus on case law integration and visual formatting to push score beyond 10.5/15 in final exam.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- TAB 3: Mock Test Analytics -->
-          <div class="portal-tab-panel" id="tab-analytics">
-            <div class="analytics-stats-grid">
-              <div class="analytic-card">
-                <div class="analytic-val">114.5</div>
-                <div class="analytic-lbl">Latest Mock Score (Cutoff: 88.0)</div>
-              </div>
-              <div class="analytic-card">
-                <div class="analytic-val">96.4%</div>
-                <div class="analytic-lbl">All-India Percentile (Rank 42/1150)</div>
-              </div>
-              <div class="analytic-card">
-                <div class="analytic-val">78.2%</div>
-                <div class="analytic-lbl">Accuracy Rate (68 Correct / 18 Incorrect)</div>
-              </div>
-            </div>
-
-            <div style="background: var(--bg-surface-elevated); border: 1px solid var(--gold-border); border-radius: var(--radius-sm); padding: 1.5rem;">
-              <h4 style="font-size: 1rem; color: var(--text-white); margin-bottom: 1.25rem;">Subject-Wise Performance Breakdown</h4>
-
-              <div class="subject-bar-item">
-                <div class="subject-bar-header">
-                  <span>Indian Polity &amp; Governance</span>
-                  <span style="color: var(--color-success); font-weight: 700;">88% Accuracy (Strong)</span>
-                </div>
-                <div class="subject-bar-track">
-                  <div class="subject-bar-val" style="width: 88%;"></div>
-                </div>
-              </div>
-
-              <div class="subject-bar-item">
-                <div class="subject-bar-header">
-                  <span>Modern Indian History &amp; Art/Culture</span>
-                  <span style="color: var(--gold-light); font-weight: 700;">72% Accuracy (Good)</span>
-                </div>
-                <div class="subject-bar-track">
-                  <div class="subject-bar-val" style="width: 72%;"></div>
-                </div>
-              </div>
-
-              <div class="subject-bar-item">
-                <div class="subject-bar-header">
-                  <span>Economy &amp; Budget Analysis</span>
-                  <span style="color: var(--color-warning); font-weight: 700;">64% Accuracy (Moderate)</span>
-                </div>
-                <div class="subject-bar-track">
-                  <div class="subject-bar-val" style="width: 64%;"></div>
-                </div>
-              </div>
-
-              <div class="subject-bar-item">
-                <div class="subject-bar-header">
-                  <span>Environment, Ecology &amp; Science Tech</span>
-                  <span style="color: #F87171; font-weight: 700;">52% Accuracy (Requires Attention)</span>
-                </div>
-                <div class="subject-bar-track">
-                  <div class="subject-bar-val" style="width: 52%; background: #EF4444;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- TAB 4: 1-on-1 Mentor Slot Booking -->
-          <div class="portal-tab-panel" id="tab-mentor-booking">
-            <div class="mentor-profile-box">
-              <div class="mentor-profile-avatar">AV</div>
-              <div>
-                <h4 style="color: var(--text-white); font-size: 1.1rem;">Dr. Alok Verma, Senior Mentor</h4>
-                <p style="font-size: 0.85rem; color: var(--gold-light);">Civil Services Coach &amp; Mains Evaluator • 9+ Years Experience</p>
-                <p style="font-size: 0.8rem; color: var(--text-slate); margin-top: 0.2rem;">Specialization: GS 2, GS 4 Ethics, Essay &amp; Strategy Roadmaps</p>
-              </div>
-            </div>
-
-            <div style="background: var(--bg-surface-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm); padding: 1.5rem;">
-              <h4 style="font-size: 0.95rem; color: var(--text-white); margin-bottom: 0.5rem;">Select Available 1-on-1 Strategy Call Slot:</h4>
-              <p style="font-size: 0.82rem; color: var(--text-slate);">Sessions are conducted via Google Meet / Zoom (Duration: 30-45 mins)</p>
-
-              <div class="slots-grid">
-                <button type="button" class="slot-btn" data-slot="Tomorrow, 4:00 PM - 4:45 PM">Tomorrow • 4:00 PM</button>
-                <button type="button" class="slot-btn selected" data-slot="Tomorrow, 6:30 PM - 7:15 PM">Tomorrow • 6:30 PM</button>
-                <button type="button" class="slot-btn" data-slot="Thursday, 11:00 AM - 11:45 AM">Thursday • 11:00 AM</button>
-                <button type="button" class="slot-btn" data-slot="Thursday, 5:00 PM - 5:45 PM">Thursday • 5:00 PM</button>
-                <button type="button" class="slot-btn" data-slot="Friday, 3:00 PM - 3:45 PM">Friday • 3:00 PM</button>
-                <button type="button" class="slot-btn" data-slot="Saturday, 7:00 PM - 7:45 PM">Saturday • 7:00 PM</button>
-              </div>
-
-              <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem;">
-                <button type="button" id="confirmSlotBookingBtn" class="btn btn-gold">
-                  Confirm Mentorship Slot &amp; Generate Link
-                </button>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -1410,7 +1131,7 @@
         <p><a href="#team">Our Mentors (Er. Aftab &amp; Er. Nandan)</a></p>
         <p><a href="#methodology">3-Tier Guidance Framework</a></p>
         <p><a href="#accountability">Daily Rhythm &amp; The Golden Rule</a></p>
-        <p><a href="#student-portal">Interactive Student Portal Demo</a></p>
+        <p><a href="#pricing">Programs &amp; Fee Structure</a></p>
       </div>
 
       <!-- Col 4: Registered Office & Helpdesk -->
@@ -1451,9 +1172,8 @@
   </a>
 
   <!-- Scripts -->
-  <script src="js/app.js?v=10"></script>
-  <script src="js/portal.js?v=10"></script>
-  <script src="js/leadCapture.js?v=10"></script>
-  <script src="js/checkout.js?v=10"></script>
+  <script src="js/app.js?v=11"></script>
+  <script src="js/leadCapture.js?v=11"></script>
+  <script src="js/checkout.js?v=11"></script>
 </body>
 </html>

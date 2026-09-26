@@ -1,28 +1,29 @@
 # Bureaucrats Hive
 
 > **Guiding Ambitions, Building Bureaucrats.**  
-> Personalized Online Mentorship & Comprehensive Test Series for UPSC CSE & BPSC Aspirants.  
-> *A Specialized Education & Mentorship Unit of Make My Vash (MMV).*
+> Founded by 5-Year UPSC Veterans **Er. Aftab Alam** (Founder, English Medium Lead) & **Er. Nandan Narayan Gandhi** (Co-Founder, NITian, Hindi Medium Lead).  
+> Personalized 1-on-1 Mentorship, Radical Daily Accountability, Dual-Medium Streams, and 24-48h Mains Evaluation.
 
 ---
 
 ## 🏛️ About Bureaucrats Hive
-**Bureaucrats Hive** is a modern, high-accountability civil services mentorship platform designed to eliminate guesswork from UPSC CSE and State PSC (BPSC) preparation. Combining 1-on-1 personalized mentorship, strict daily answer writing evaluation (24-48h SLA), stage-wise test series, and interactive student tracking, the platform offers full digital handholding to aspirants across India.
+**Bureaucrats Hive** was built to eliminate guesswork from civil services preparation. Flipping the traditional coaching factory model, the platform provides tailored problem-solving, a 3-tier guidance framework (what to do, where to do it from, and when to do it), radical daily target synchronization by 11:00 PM, and the golden rule: *No next target without completion of the previous one*.
 
 ---
 
-## ✨ Features
+## 💎 Programs & Pricing
+- **1:1 One-Time Consultation:** ₹499 / session (45-Min Intensive Strategy & Bottleneck Fix)
+- **Year-Long Mentorship:** ₹4,999 / year (★ Flagship Cohort with Weekly Video Calls, Triplets Pods & Dual-Medium Tracks)
+- **Answer Writing & Evaluation:** ₹2,999 for 90 Days (3 Qs Daily) or ₹50 / question daily (Strict 24-48h SLA)
 
-- **Luxury Brand & Design System**: Deep Navy Blue (`#0A192F`), Rich Slate (`#112240`), and Royal Metallic Gold (`#D4AF37`) palette with custom 3D vector emblem.
-- **Interactive Target Diagnostic**: Live roadmap calculator dynamically estimating study duration, mock test quotas, and strategy focus based on target exam and prep stage.
-- **Interactive Student Portal**:
-  - *Daily Study Targets*: Checklist with progress bar recalculation (0-100%) and streak tracking.
-  - *Evaluated Answer Sheet*: Redline mentor annotations, case law recommendations, and rubric scorecard.
-  - *Mock Test Analytics*: Score breakdowns, percentile ranks, and subject accuracy charts.
-  - *1-on-1 Mentor Slot Booking*: Live slot picker and appointment confirmation.
-- **Transparent Fee Structure & Checkout**: Switchable one-time vs. installment billing with simulated Razorpay/UPI/Card checkout and instant invoice generation.
-- **Free Strategy Session Lead Form**: Client-side validation, local CRM storage, and instant WhatsApp consultation redirect.
-- **Corporate Disclaimer**: Clear corporate attribution for Make My Vash (MMV).
+---
+
+## ✨ Core Pillars
+- **3-Tier Guidance Framework:** Telling students *what to do*, *where to do it from*, and *when to do it*.
+- **Radical Accountability:** Daily targets submitted across dedicated groups by 11:00 PM; Triplets accountability pods checking micro-targets before noon.
+- **Dual-Medium Segregated Execution:** Dedicated streams handled personally by Er. Aftab Alam (English) and Er. Nandan Narayan Gandhi (Hindi).
+- **Anti-Clutter Source Diet:** Banning information overload in favor of single-source master notes.
+- **Holistic Stamina & Plan B Roadmap:** Monthly burnout decompression sessions, family boundary protocols, and alternative career path guidance (State PSCs, RBI, EPFO).
 
 ---
 

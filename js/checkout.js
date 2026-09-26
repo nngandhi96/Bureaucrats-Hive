@@ -8,48 +8,143 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const COURSE_PLANS = {
-  'upsc-comprehensive': {
-    name: 'UPSC Comprehensive Mentorship',
-    target: 'Prelims + Mains + 1-on-1 Mentorship + GS 1-4 & Essay',
-    oneTimePrice: 24999,
-    originalPrice: 34999,
-    installmentPrice: 13500,
-    validity: 'Till UPSC CSE Mains 2026',
+  'consultation': {
+    name: '1:1 One-Time Mentorship Consultation',
+    target: '45-Min Intensive Diagnostic & Strategy Session',
+    oneTimePrice: 499,
+    originalPrice: 1499,
+    installmentPrice: 499,
+    validity: 'Single Session + Actionable Plan',
     features: [
-      'Dedicated 1-on-1 Officer/Ranker Mentor',
-      'Daily 2 Questions Answer Writing & 48h SLA Review',
-      '40 Prelims + 24 Mains Evaluated Mock Tests',
-      'Weekly 1-on-1 Zoom Strategy Review Calls',
-      'Ethics & Essay Value Addition Frameworks'
+      '1-on-1 direct video call/call with Senior Mentor',
+      'Personalized bottleneck diagnosis (Editorial/Mains/CSAT)',
+      'Exact actionable fixes & tailored preparation blueprint',
+      'Syllabus & PYQ strategy audit',
+      'Zero corporate fluff • 100% practical problem-solving'
+    ]
+  },
+  'one-time-consultation': {
+    name: '1:1 One-Time Mentorship Consultation',
+    target: '45-Min Intensive Diagnostic & Strategy Session',
+    oneTimePrice: 499,
+    originalPrice: 1499,
+    installmentPrice: 499,
+    validity: 'Single Session + Actionable Plan',
+    features: [
+      '1-on-1 direct video call/call with Senior Mentor',
+      'Personalized bottleneck diagnosis (Editorial/Mains/CSAT)',
+      'Exact actionable fixes & tailored preparation blueprint',
+      'Syllabus & PYQ strategy audit',
+      'Zero corporate fluff • 100% practical problem-solving'
+    ]
+  },
+  'year-long-mentorship': {
+    name: 'Year-Long Comprehensive Mentorship',
+    target: 'Full 12-Month Digital Ecosystem & Direct Handholding',
+    oneTimePrice: 4999,
+    originalPrice: 9999,
+    installmentPrice: 2750,
+    validity: 'Full 1-Year Mentorship Cycle',
+    features: [
+      'Weekly 1-on-1 mentor on video call/call',
+      'Dedicated Dual-Medium tracks (English: Er. Aftab | Hindi: Er. Nandan)',
+      'Daily targets & mandatory submission by 11:00 PM',
+      'Strict rule: No next target without completion of previous one',
+      'Daily 1 Mains PYQ + 25 Topic PYQs drills',
+      'Zero-Lag WhatsApp Direct Line with guaranteed mentor revert',
+      'Accountability Pods (Triplets) with morning check-ins',
+      'Plan B & Alternative Career Guidance (State PSCs, RBI, EPFO)',
+      'Monthly Mental Health & Burnout Decompression sessions'
+    ]
+  },
+  'year-long': {
+    name: 'Year-Long Comprehensive Mentorship',
+    target: 'Full 12-Month Digital Ecosystem & Direct Handholding',
+    oneTimePrice: 4999,
+    originalPrice: 9999,
+    installmentPrice: 2750,
+    validity: 'Full 1-Year Mentorship Cycle',
+    features: [
+      'Weekly 1-on-1 mentor on video call/call',
+      'Dedicated Dual-Medium tracks (English: Er. Aftab | Hindi: Er. Nandan)',
+      'Daily targets & mandatory submission by 11:00 PM',
+      'Strict rule: No next target without completion of previous one',
+      'Daily 1 Mains PYQ + 25 Topic PYQs drills',
+      'Zero-Lag WhatsApp Direct Line with guaranteed mentor revert',
+      'Accountability Pods (Triplets) with morning check-ins',
+      'Plan B & Alternative Career Guidance (State PSCs, RBI, EPFO)',
+      'Monthly Mental Health & Burnout Decompression sessions'
+    ]
+  },
+  'mains-evaluation-90': {
+    name: 'Mains Answer Writing & Evaluation (90 Days)',
+    target: '3 Questions Daily • Comprehensive Mains Mastery',
+    oneTimePrice: 2999,
+    originalPrice: 5999,
+    installmentPrice: 1650,
+    validity: '90 Days Evaluation Cycle',
+    features: [
+      'Daily 3 Mains questions submission with 24-48h SLA',
+      'Line-by-line redline mentor annotations & critique',
+      'Model synopses, case law additions & diagrams',
+      'Multi-dimensional rubric scorecard & marks breakdown',
+      'Covers GS 1, GS 2, GS 3, GS 4 (Ethics) & Essay'
+    ]
+  },
+  'single-eval': {
+    name: 'Daily Answer Evaluation (Pay Per Question)',
+    target: '1 Question Daily • Flexible Evaluation Plan',
+    oneTimePrice: 50,
+    originalPrice: 150,
+    installmentPrice: 50,
+    validity: 'Single Answer Evaluation',
+    features: [
+      '1 Question Daily submission',
+      'Strict 24 to 48 hours evaluation SLA',
+      'Line-by-line feedback & structure improvement fixes',
+      'Evaluation by 5-year experienced UPSC mentors'
+    ]
+  },
+  'upsc-comprehensive': {
+    name: 'Year-Long Comprehensive Mentorship',
+    target: 'Complete 12-Month Handholding for UPSC CSE',
+    oneTimePrice: 4999,
+    originalPrice: 9999,
+    installmentPrice: 2750,
+    validity: 'Full 1-Year Mentorship Cycle',
+    features: [
+      'Weekly 1-on-1 mentor video calls',
+      'Daily target tracking & 11:00 PM submission rule',
+      'Dual-Medium support (English & Hindi)',
+      'Daily 1 Mains PYQ + 25 Prelims PYQs',
+      'Zero-Lag WhatsApp mentor direct line'
     ]
   },
   'bpsc-integrated': {
-    name: 'BPSC Integrated Mentorship',
-    target: '71st / 72nd BPSC CCE Prelims + Mains Intensive',
-    oneTimePrice: 18499,
-    originalPrice: 26999,
-    installmentPrice: 9999,
-    validity: 'Till BPSC Mains Exam Cycle',
+    name: 'Mains Answer Writing & Evaluation (90 Days)',
+    target: '3 Questions Daily Intensive Evaluation',
+    oneTimePrice: 2999,
+    originalPrice: 5999,
+    installmentPrice: 1650,
+    validity: '90 Days Access',
     features: [
-      'Bihar Special GS (History, Economy, Geography) Modules',
-      'Daily Mains Answer Evaluation with Model Synopsis',
-      '30 Prelims Sectional/Full Tests + 18 Mains Tests',
-      'Direct WhatsApp Mentor Access for Doubt Clearing',
-      'Bihar Economic Survey & Budget Micro-Notes'
+      'Daily 3 Mains Questions with 24-48h SLA',
+      'Line-by-line redline annotations',
+      'Model synopses and rubrics',
+      'GS 1-4 and Essay coverage'
     ]
   },
   'test-series-only': {
-    name: 'Integrated Test Series + Evaluation Only',
-    target: 'UPSC CSE & BPSC Mocks with Rubric Feedback',
-    oneTimePrice: 9999,
-    originalPrice: 14999,
-    installmentPrice: 5500,
-    validity: '12 Months Access',
+    name: '1:1 One-Time Mentorship Consultation',
+    target: '45-Min Intensive Strategy Session',
+    oneTimePrice: 499,
+    originalPrice: 1499,
+    installmentPrice: 499,
+    validity: 'Single Session',
     features: [
-      '35 Prelims Tests with All-India Percentile Rank',
-      '16 Mains Tests with Detailed Model Answers',
-      'Question-by-Question Evaluation & Rubric Scores',
-      'Performance Radar & Weak Area Heatmap'
+      '1-on-1 direct video call with Senior Mentor',
+      'Personalized bottleneck diagnosis',
+      'Actionable preparation blueprint'
     ]
   }
 };
@@ -58,13 +153,13 @@ let currentBillingMode = 'onetime'; // 'onetime' | 'installment'
 
 function initPricingSwitch() {
   const switchBtns = document.querySelectorAll('.pricing-switch-btn');
-  const upscPrice = document.getElementById('priceUpsc');
-  const bpscPrice = document.getElementById('priceBpsc');
-  const testPrice = document.getElementById('priceTest');
+  const plan1Price = document.getElementById('pricePlan1');
+  const plan2Price = document.getElementById('pricePlan2');
+  const plan3Price = document.getElementById('pricePlan3');
 
-  const upscNote = document.getElementById('noteUpsc');
-  const bpscNote = document.getElementById('noteBpsc');
-  const testNote = document.getElementById('noteTest');
+  const plan1Note = document.getElementById('notePlan1');
+  const plan2Note = document.getElementById('notePlan2');
+  const plan3Note = document.getElementById('notePlan3');
 
   switchBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -73,21 +168,21 @@ function initPricingSwitch() {
       currentBillingMode = btn.getAttribute('data-billing');
 
       if (currentBillingMode === 'installment') {
-        if (upscPrice) upscPrice.textContent = '13,500';
-        if (bpscPrice) bpscPrice.textContent = '9,999';
-        if (testPrice) testPrice.textContent = '5,500';
+        if (plan1Price) plan1Price.textContent = '499';
+        if (plan2Price) plan2Price.textContent = '2,750';
+        if (plan3Price) plan3Price.textContent = '1,650';
 
-        if (upscNote) upscNote.textContent = 'Pay in 2 easy installments (₹13,500 x 2)';
-        if (bpscNote) bpscNote.textContent = 'Pay in 2 easy installments (₹9,999 x 2)';
-        if (testNote) testNote.textContent = 'Pay in 2 easy installments (₹5,500 x 2)';
+        if (plan1Note) plan1Note.textContent = 'Single session direct payment';
+        if (plan2Note) plan2Note.textContent = 'Pay in 2 easy installments (₹2,750 x 2)';
+        if (plan3Note) plan3Note.textContent = 'Pay in 2 easy installments (₹1,650 x 2)';
       } else {
-        if (upscPrice) upscPrice.textContent = '24,999';
-        if (bpscPrice) bpscPrice.textContent = '18,499';
-        if (testPrice) testPrice.textContent = '9,999';
+        if (plan1Price) plan1Price.textContent = '499';
+        if (plan2Price) plan2Price.textContent = '4,999';
+        if (plan3Price) plan3Price.textContent = '2,999';
 
-        if (upscNote) upscNote.textContent = 'One-time investment • Save ₹10,000 today';
-        if (bpscNote) bpscNote.textContent = 'One-time investment • Save ₹8,500 today';
-        if (testNote) testNote.textContent = 'One-time investment • Full access package';
+        if (plan1Note) plan1Note.textContent = 'Flat fee per 45-min consultation session';
+        if (plan2Note) plan2Note.textContent = 'One-time investment • Full 1-Year Access (Save 50%)';
+        if (plan3Note) plan3Note.textContent = 'One-time investment • 90 Days 3 Qs Daily (Save 50%)';
       }
     });
   });

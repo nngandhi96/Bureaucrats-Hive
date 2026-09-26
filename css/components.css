@@ -2296,7 +2296,188 @@
   text-decoration: underline;
 }
 
-/* 10. Responsive Overrides for EdTech Layout */
+/* 11. Bureaucrats Hive - Team, Framework & Accountability Enhancements */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background: var(--bg-surface-glass);
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.08);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-border-glow);
+  box-shadow: 0 18px 45px -8px rgba(15, 23, 42, 0.12), 0 0 20px rgba(197, 147, 37, 0.2);
+}
+
+.team-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.team-avatar-box {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #120D04;
+  box-shadow: 0 4px 18px rgba(197, 147, 37, 0.35);
+  border: 3px solid #fff;
+  flex-shrink: 0;
+}
+
+.team-badge-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.35rem;
+}
+
+.badge-founder {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #F59E0B;
+}
+
+.badge-cofounder {
+  background: #E0E7FF;
+  color: #3730A3;
+  border: 1px solid #6366F1;
+}
+
+.medium-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #F1F5F9;
+  color: var(--ink);
+  padding: 0.3rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid var(--ed-line);
+}
+
+/* 3-Tier Guidance Framework */
+.tier-framework-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.tier-pillar-card {
+  background: #fff;
+  border: 1px solid var(--ed-line);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  position: relative;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 20px rgba(16, 26, 79, 0.05);
+}
+
+.tier-pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  box-shadow: 0 12px 30px rgba(36, 85, 245, 0.12);
+}
+
+.tier-pillar-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--blue-pale);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Non-Negotiable Golden Rule Banner */
+.golden-rule-banner {
+  background: linear-gradient(135deg, #101A4F 0%, #1A2E7B 100%);
+  border: 2px solid var(--gold-primary);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 2rem;
+  color: #fff;
+  margin: 2.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 12px 36px rgba(16, 26, 79, 0.25);
+}
+
+.golden-rule-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+/* Accountability Pods & Personal Dynamics */
+.accountability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.accountability-item {
+  background: #FFFFFF;
+  border: 1px solid var(--ed-line);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.accountability-item:hover {
+  border-color: var(--gold-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(197, 147, 37, 0.15);
+}
+
+.accountability-item h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .team-grid, .tier-framework-grid, .accountability-grid {
+    grid-template-columns: 1fr;
+  }
+  .golden-rule-banner {
+    flex-direction: column;
+    text-align: center;
+  }
 @media (max-width: 1100px) {
   .desktop-links-edtech { display: none; }
   .hero-edtech { background: linear-gradient(#FBFCFF, #EDF3FF); }
@@ -2319,4 +2500,5 @@
   .promo-visual { height: 260px; }
   .trust-bar-edtech { gap: 14px; font-size: 12px; }
 }
+
 

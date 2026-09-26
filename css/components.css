@@ -1529,48 +1529,72 @@
 
 .hero-trust {
   margin-top: 30px;
-  max-width: 560px;
-  background: #fff;
+  max-width: 580px;
+  width: 100%;
+  background: #FFFFFF;
   border: 1px solid var(--ed-line);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 18px rgba(16, 26, 79, 0.06);
   border-radius: 14px;
-  padding: 14px;
+  padding: 12px 14px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  box-sizing: border-box;
 }
 
-.hero-trust div {
+.hero-trust > div {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 2px 12px;
+  gap: 9px;
+  padding: 4px 10px;
   border-right: 1px solid var(--ed-line);
+  min-width: 0;
+  box-sizing: border-box;
 }
 
-.hero-trust div:last-child {
+.hero-trust > div:last-child {
+  border-right: 0;
+}
+
+.hero-trust > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  padding: 0;
   border: 0;
 }
 
 .hero-trust i {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  background: var(--blue-pale);
-  display: grid;
-  place-items: center;
+  border-radius: 10px;
+  background: rgba(197, 147, 37, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-style: normal;
-  font-size: 16px;
+  font-size: 15px;
+  flex-shrink: 0;
+  border: 1px solid rgba(197, 147, 37, 0.2);
 }
 
 .hero-trust strong {
   display: block;
-  color: var(--blue);
-  font-size: 15px;
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
 .hero-trust span {
+  display: block;
   font-size: 11px;
-  color: var(--ed-muted);
+  color: var(--text-slate);
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 /* 4. Hero 3D Promotional Cards */
@@ -2691,7 +2715,8 @@
   .hero-shell { padding: 35px 16px; }
   .hero-edtech h1 { font-size: 34px; letter-spacing: -1.2px; }
   .hero-trust { grid-template-columns: 1fr; gap: 8px; }
-  .hero-trust div { border-right: 0; border-bottom: 1px solid var(--ed-line); padding: 8px 0; }
+  .hero-trust > div { border-right: 0; border-bottom: 1px solid var(--ed-line); padding: 8px 0; }
+  .hero-trust > div:last-child { border-bottom: 0; }
   .hero-products { grid-template-columns: 1fr; }
   .promo-visual { height: 260px; }
   .trust-bar-edtech { gap: 14px; font-size: 12px; }

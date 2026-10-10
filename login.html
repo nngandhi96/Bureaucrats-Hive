@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Student LMS Login | Bureaucrats Hive</title>
+  <meta name="description" content="Sign in to the Bureaucrats Hive Student LMS Portal. Access daily study roadmaps, 24-hour Mains answer evaluation, test series analytics, and 1-on-1 mentor sessions." />
+  <meta name="author" content="Bureaucrats Hive" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css?v=12" />
+  <link rel="stylesheet" href="css/components.css?v=15" />
+
+  <style>
+    /* Dedicated Login Page Standalone Layout */
+    body {
+      background: radial-gradient(circle at 10% 20%, #F8FAFC 0%, #EDF2F7 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-body);
+      color: var(--text-white);
+    }
+
+    .login-top-bar {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--ed-line);
+      padding: 0.85rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .login-brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .login-brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+    }
+
+    .login-brand-title span {
+      color: var(--gold-primary);
+    }
+
+    .login-main-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .login-split-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 50px -10px rgba(16, 26, 79, 0.12), 0 0 35px rgba(197, 147, 37, 0.15);
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      overflow: hidden;
+      width: 100%;
+      min-height: 580px;
+    }
+
+    /* Left Showcase Panel (Luxury Dark Navy & Gold) */
+    .login-showcase-panel {
+      background: linear-gradient(145deg, #0E1624 0%, #152033 60%, #0B111D 100%);
+      color: #FFFFFF;
+      padding: 3.5rem 3rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .login-showcase-panel::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(197, 147, 37, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .login-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(197, 147, 37, 0.18);
+      border: 1px solid rgba(197, 147, 37, 0.45);
+      color: #F6D884;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      width: fit-content;
+    }
+
+    .login-showcase-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+
+    .login-showcase-title span {
+      color: #ECC359;
+    }
+
+    .login-showcase-desc {
+      color: #94A3B8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .login-feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      margin-bottom: 2rem;
+    }
+
+    .login-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .login-feature-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(197, 147, 37, 0.2);
+      border: 1px solid rgba(197, 147, 37, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ECC359;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    .login-feature-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #F8FAFC;
+      margin-bottom: 0.15rem;
+    }
+
+    .login-feature-text p {
+      font-size: 0.82rem;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+
+    .login-trust-quote {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid var(--gold-primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.85rem;
+      color: #CBD5E1;
+      font-style: italic;
+    }
+
+    /* Right Form Panel */
+    .login-form-panel {
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #FFFFFF;
+    }
+
+    .login-form-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .login-form-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+    }
+
+    .login-form-header p {
+      font-size: 0.9rem;
+      color: var(--text-slate);
+    }
+
+    .login-footer-bar {
+      background: #FFFFFF;
+      border-top: 1px solid var(--ed-line);
+      padding: 1.25rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-slate);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .login-split-card {
+        grid-template-columns: 1fr;
+      }
+      .login-showcase-panel {
+        padding: 2.5rem 2rem;
+      }
+      .login-form-panel {
+        padding: 2.5rem 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .login-top-bar {
+        padding: 0.75rem 1rem;
+      }
+      .login-main-container {
+        padding: 1rem;
+      }
+      .login-form-panel {
+        padding: 1.75rem 1.25rem;
+      }
+      .login-showcase-panel {
+        padding: 1.75rem 1.25rem;
+      }
+      .login-showcase-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Simple Navigation Bar -->
+  <header class="login-top-bar">
+    <a href="index.html" class="login-brand-link">
+      <img src="assets/images/emblem.png?v=7" alt="Bureaucrats Hive Emblem" style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--gold-primary);" />
+      <div class="login-brand-title">Bureaucrats <span>Hive</span></div>
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="index.html" class="btn btn-outline-gold" style="font-size: 0.85rem; padding: 0.45rem 0.95rem;">
+        &larr; Return to Website
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Login Showcase Container -->
+  <main class="login-main-container">
+    <div class="login-split-card">
+
+      <!-- Left Column: Prestigious EdTech Brand Showcase -->
+      <section class="login-showcase-panel">
+        <div>
+          <div class="login-badge-pill">
+            <span>🏛️ Official LMS Portal</span>
+          </div>
+
+          <h1 class="login-showcase-title">
+            Your Civil Services <br />
+            <span>Mentorship Headquarters</span>
+          </h1>
+
+          <p class="login-showcase-desc">
+            Single unified gateway for UPSC CSE 2026 &amp; 71st BPSC Super-30 aspirants to track routines, receive evaluated answers, and access mentor strategy sessions.
+          </p>
+
+          <div class="login-feature-list">
+            <div class="login-feature-item">
+              <div class="login-feature-icon">📝</div>
+              <div class="login-feature-text">
+                <h4>24-Hour Mains Answer Evaluation</h4>
+                <p>Rubric-based line-by-line annotation, marks breakdown, and mentor audio/written feedback.</p>
+              </div>
+            </div>
+
+            <div class="login-feature-item">
+              <div class="login-feature-icon">🎯</div>
+              <div class="login-feature-text">
+                <h4>1-on-1 Mentorship Strategy Calls</h4>
+                <p>Direct scheduling with Er. Aftab &amp; Er. Nandan for personal micro-roadmaps.</p>
+              </div>
+            </div>
+
+            <div class="login-feature-item">
+              <div class="login-feature-icon">📊</div>
+              <div class="login-feature-text">
+                <h4>All-India Mock Test Analytics</h4>
+                <p>Subject-wise accuracy breakdown, sectional cut-off analysis, and ranking reports.</p>
+              </div>
+            </div>
+
+            <div class="login-feature-item">
+              <div class="login-feature-icon">⚡</div>
+              <div class="login-feature-text">
+                <h4>Daily Rhythm &amp; Target Tracker</h4>
+                <p>Strict accountability with daily habit tracking, streak counters, and mentor notifications.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-trust-quote">
+          &ldquo;Bureaucrats Hive transformed my answer writing consistency. The 24-hour evaluation and direct mentor calls made all the difference.&rdquo;
+          <div style="margin-top: 0.35rem; font-weight: 700; color: #ECC359; font-style: normal; font-size: 0.8rem;">
+            &mdash; UPSC CSE 2026 Cohort Aspirant
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Interactive Login Form -->
+      <section class="login-form-panel">
+        <div class="login-form-header">
+          <h2>Student Sign In</h2>
+          <p>Please enter your registered credentials to access your dashboard.</p>
+        </div>
+
+        <!-- Auth Mode Toggle Tabs -->
+        <div class="auth-tabs-nav" role="tablist">
+          <button class="auth-tab-btn active" id="authTabPwd" onclick="switchAuthTab('pwd')" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Password Login</span>
+          </button>
+          <button class="auth-tab-btn" id="authTabOtp" onclick="switchAuthTab('otp')" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Mobile OTP</span>
+          </button>
+        </div>
+
+        <!-- Form 1: Password Login -->
+        <form id="authFormPwd" onsubmit="return handleAuthPasswordSubmit(event)">
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="authStudentId">Student Roll ID or Registered Email</label>
+            <div class="auth-input-wrap">
+              <span class="auth-input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </span>
+              <input type="text" id="authStudentId" class="auth-input" placeholder="e.g. BH-2026-0842 or your email" required autocomplete="username" />
+            </div>
+          </div>
+
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="authPassword">Password</label>
+            <div class="auth-input-wrap">
+              <span class="auth-input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </span>
+              <input type="password" id="authPassword" class="auth-input" placeholder="••••••••" required autocomplete="current-password" />
+              <button type="button" class="auth-toggle-pwd" onclick="toggleAuthPassword('authPassword', this)" aria-label="Toggle password visibility">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="auth-extra-row">
+            <label class="auth-remember-label">
+              <input type="checkbox" checked style="accent-color: var(--gold-primary);" />
+              <span>Remember me on this device</span>
+            </label>
+            <a href="javascript:void(0)" onclick="alert('Password reset link sent to your registered WhatsApp & Email. Contact +91 97547 61682 if you need immediate assistance.');" class="auth-forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="auth-btn-submit" id="authSubmitBtn">
+            <span>Sign In to Student Portal</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </form>
+
+        <!-- Form 2: Mobile OTP Login -->
+        <form id="authFormOtp" onsubmit="return handleAuthOtpSubmit(event)" style="display: none;">
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="authOtpPhone">Registered Mobile Number</label>
+            <div style="display: flex; gap: 8px;">
+              <div class="auth-input-wrap" style="flex: 1;">
+                <span class="auth-input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </span>
+                <input type="tel" id="authOtpPhone" class="auth-input" placeholder="10-digit mobile number" maxlength="10" />
+              </div>
+              <button type="button" class="btn btn-outline-gold" style="white-space: nowrap; padding: 0.75rem 1rem; font-size: 0.85rem;" onclick="sendAuthOtp()">Send OTP</button>
+            </div>
+          </div>
+
+          <div class="auth-form-group" id="authOtpCodeGroup" style="display: none;">
+            <label class="auth-form-label" for="authOtpCode">Enter 4-Digit OTP (Hint: 7429)</label>
+            <div class="auth-input-wrap">
+              <span class="auth-input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </span>
+              <input type="text" id="authOtpCode" class="auth-input" placeholder="7429" maxlength="6" style="letter-spacing: 4px; font-weight: 700;" />
+            </div>
+          </div>
+
+          <button type="submit" class="auth-btn-submit" style="margin-top: 1rem;">
+            <span>Verify &amp; Enter Portal</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
+        </form>
+
+        <!-- Fast Demo Access -->
+        <div class="auth-divider-line">
+          <span>Instant Preview Access</span>
+        </div>
+
+        <button type="button" class="auth-demo-btn" onclick="quickDemoLogin()">
+          <span>⚡ 1-Click Demo Student Access (Explore Dashboard)</span>
+        </button>
+
+        <div class="auth-footer-notes">
+          New to Bureaucrats Hive? <a href="index.html#pricing">Explore Mentorship Batches &amp; Admissions &rarr;</a>
+          <div class="auth-security-tag">
+            <span>🔒 256-Bit SSL Encrypted &amp; Protected LMS Session</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Login Page Footer -->
+  <footer class="login-footer-bar">
+    <div>
+      &copy; 2026 <strong>Bureaucrats Hive</strong>. All Rights Reserved. Student Helpdesk: <a href="tel:+919754761682" style="color: var(--gold-dark); text-decoration: none; font-weight: 600;">+91 97547 61682</a>
+    </div>
+    <div style="display: flex; gap: 1rem;">
+      <a href="index.html#about" style="color: var(--text-slate); text-decoration: none;">Privacy Policy</a>
+      <a href="index.html#about" style="color: var(--text-slate); text-decoration: none;">Terms of Service</a>
+      <a href="index.html#faq" style="color: var(--text-slate); text-decoration: none;">Student FAQs</a>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="js/app.js?v=12"></script>
+</body>
+</html>

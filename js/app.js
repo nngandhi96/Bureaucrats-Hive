@@ -399,3 +399,209 @@ window.showToast = function(message, type = 'gold') {
   }, 4000);
 };
 
+/* 6. Student LMS Authentication Modal & Session Engine */
+window.openAuthModal = function() {
+  // If already logged in, redirect directly to portal or offer portal
+  const isLoggedIn = localStorage.getItem('bh_student_logged_in') === 'true';
+  if (isLoggedIn) {
+    if (typeof window.showToast === 'function') {
+      window.showToast('Redirecting to your active Student Portal session...', 'success');
+    }
+    setTimeout(() => {
+      window.location.href = 'portal.html';
+    }, 600);
+    return;
+  }
+
+  const modal = document.getElementById('authModal');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const emailInput = document.getElementById('authStudentId');
+    if (emailInput) {
+      setTimeout(() => emailInput.focus(), 150);
+    }
+  } else {
+    // If modal element is not present on current page, redirect to login.html
+    window.location.href = 'login.html';
+  }
+};
+
+window.closeAuthModal = function() {
+  const modal = document.getElementById('authModal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+};
+
+window.switchAuthTab = function(mode) {
+  const pwdTab = document.getElementById('authTabPwd');
+  const otpTab = document.getElementById('authTabOtp');
+  const pwdForm = document.getElementById('authFormPwd');
+  const otpForm = document.getElementById('authFormOtp');
+
+  if (mode === 'pwd') {
+    if (pwdTab) pwdTab.classList.add('active');
+    if (otpTab) otpTab.classList.remove('active');
+    if (pwdForm) pwdForm.style.display = 'block';
+    if (otpForm) otpForm.style.display = 'none';
+  } else {
+    if (otpTab) otpTab.classList.add('active');
+    if (pwdTab) pwdTab.classList.remove('active');
+    if (otpForm) otpForm.style.display = 'block';
+    if (pwdForm) pwdForm.style.display = 'none';
+  }
+};
+
+window.toggleAuthPassword = function(inputId, btn) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
+  } else {
+    input.type = 'password';
+    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+  }
+};
+
+window.handleAuthPasswordSubmit = function(e) {
+  if (e) e.preventDefault();
+  const idInput = document.getElementById('authStudentId');
+  const pwdInput = document.getElementById('authPassword');
+  const valId = idInput ? idInput.value.trim() : '';
+  const valPwd = pwdInput ? pwdInput.value : '';
+
+  if (!valId) {
+    window.showToast('Please enter your Student ID or Registered Email.', 'gold');
+    if (idInput) idInput.focus();
+    return false;
+  }
+  if (!valPwd) {
+    window.showToast('Please enter your portal password.', 'gold');
+    if (pwdInput) pwdInput.focus();
+    return false;
+  }
+
+  // Create or persist mock student profile
+  const studentData = {
+    name: valId.includes('@') ? valId.split('@')[0].replace(/[._]/g, ' ') : valId,
+    id: valId.toUpperCase().startsWith('BH-') ? valId.toUpperCase() : 'BH-2026-0842',
+    email: valId.includes('@') ? valId : 'student@bureaucratshive.com',
+    batch: 'UPSC CSE 2026 Comprehensive Mentorship',
+    mentor: 'Er. Aftab & Er. Nandan',
+    streak: 14,
+    avatar: 'BH'
+  };
+
+  // Capitalize name
+  studentData.name = studentData.name.charAt(0).toUpperCase() + studentData.name.slice(1);
+
+  localStorage.setItem('bh_student_logged_in', 'true');
+  localStorage.setItem('bh_student_data', JSON.stringify(studentData));
+
+  const btn = document.getElementById('authSubmitBtn');
+  if (btn) {
+    btn.innerHTML = `<span>Signing In...</span> <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 1 10 10"></path></svg>`;
+    btn.disabled = true;
+  }
+
+  window.showToast(`Welcome back, ${studentData.name}! Opening Student Portal...`, 'success');
+
+  setTimeout(() => {
+    window.location.href = 'portal.html';
+  }, 750);
+
+  return false;
+};
+
+window.sendAuthOtp = function() {
+  const phoneInput = document.getElementById('authOtpPhone');
+  const phone = phoneInput ? phoneInput.value.trim() : '';
+  if (!phone || phone.length < 10) {
+    window.showToast('Please enter a valid 10-digit mobile number.', 'gold');
+    if (phoneInput) phoneInput.focus();
+    return;
+  }
+
+  const otpGroup = document.getElementById('authOtpCodeGroup');
+  if (otpGroup) {
+    otpGroup.style.display = 'block';
+  }
+  const otpInput = document.getElementById('authOtpCode');
+  if (otpInput) {
+    otpInput.value = '7429'; // Simulated OTP for testing
+    setTimeout(() => otpInput.focus(), 100);
+  }
+
+  window.showToast(`OTP 7429 sent to +91 ${phone} via WhatsApp & SMS.`, 'success');
+};
+
+window.handleAuthOtpSubmit = function(e) {
+  if (e) e.preventDefault();
+  const phoneInput = document.getElementById('authOtpPhone');
+  const otpInput = document.getElementById('authOtpCode');
+  const phone = phoneInput ? phoneInput.value.trim() : '';
+  const otp = otpInput ? otpInput.value.trim() : '';
+
+  if (!phone || phone.length < 10) {
+    window.showToast('Please enter your 10-digit mobile number.', 'gold');
+    return false;
+  }
+  if (!otp || otp.length < 4) {
+    window.showToast('Please enter the 4-digit OTP sent to your phone.', 'gold');
+    return false;
+  }
+
+  const studentData = {
+    name: 'Aspirant ' + phone.slice(-4),
+    id: 'BH-2026-OTP' + phone.slice(-4),
+    email: phone + '@bureaucratshive.com',
+    batch: '71st BPSC Super-30 Integrated Cohort',
+    mentor: 'Er. Aftab & Er. Nandan',
+    streak: 12,
+    avatar: 'BH'
+  };
+
+  localStorage.setItem('bh_student_logged_in', 'true');
+  localStorage.setItem('bh_student_data', JSON.stringify(studentData));
+
+  window.showToast('Mobile verified successfully! Opening Student Portal...', 'success');
+
+  setTimeout(() => {
+    window.location.href = 'portal.html';
+  }, 700);
+
+  return false;
+};
+
+window.quickDemoLogin = function() {
+  const demoStudent = {
+    name: 'Priya Sharma',
+    id: 'BH-2026-0842',
+    email: 'priya.sharma@bureaucratshive.com',
+    batch: 'UPSC CSE 2026 Comprehensive Mentorship',
+    mentor: 'Er. Aftab & Er. Nandan',
+    streak: 14,
+    avatar: 'PS'
+  };
+
+  localStorage.setItem('bh_student_logged_in', 'true');
+  localStorage.setItem('bh_student_data', JSON.stringify(demoStudent));
+
+  if (typeof window.showToast === 'function') {
+    window.showToast('Logged in as Demo Student (Priya Sharma). Loading dashboard...', 'success');
+  }
+
+  setTimeout(() => {
+    window.location.href = 'portal.html';
+  }, 600);
+};
+
+// Global escape key listener for auth modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    window.closeAuthModal();
+  }
+});

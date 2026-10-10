@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Student LMS Dashboard | Bureaucrats Hive</title>
+  <meta name="description" content="Bureaucrats Hive Student Portal Dashboard. Daily target tracker, Mains answer writing evaluations, mock test analytics, and 1-on-1 mentor booking." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Cinzel, Montserrat, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css?v=12" />
+  <link rel="stylesheet" href="css/components.css?v=15" />
+  <link rel="stylesheet" href="css/portal.css?v=15" />
+</head>
+<body class="portal-page-body">
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="portal-nav-bar">
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <a href="index.html" class="portal-brand-wrap" title="Return to Main Website">
+        <img src="assets/images/emblem.png?v=7" alt="Bureaucrats Hive Emblem" style="width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--gold-primary);" />
+        <div class="portal-brand-text">Bureaucrats <span>Hive</span></div>
+      </a>
+
+      <span class="portal-batch-tag dynamic-student-batch" style="display: inline-block;">
+        Target UPSC CSE 2026 Comprehensive Mentorship
+      </span>
+    </div>
+
+    <!-- Right Profile & Logout Actions -->
+    <div class="portal-nav-actions">
+      <!-- Streak Badge -->
+      <div class="streak-counter" id="portalStreakCount" style="margin-bottom: 0;">
+        🔥 14 Days Streak
+      </div>
+
+      <!-- Student Profile Chip -->
+      <div class="portal-student-chip">
+        <div class="portal-chip-avatar dynamic-student-avatar">PS</div>
+        <div class="portal-chip-info">
+          <div class="portal-chip-name dynamic-student-name">Priya Sharma</div>
+          <div class="portal-chip-id dynamic-student-id">BH-2026-0842</div>
+        </div>
+      </div>
+
+      <!-- Logout Button -->
+      <button class="portal-logout-btn" onclick="logoutStudent()" title="Sign Out of Portal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        <span>Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Dashboard App Wrap -->
+  <main class="portal-main-wrap">
+
+    <!-- 1. Personalized Welcome Hero Card -->
+    <section class="portal-welcome-hero">
+      <div class="portal-hero-greeting">
+        <div class="portal-hero-badge">
+          <span>🎯 Daily Accountability Mode Active</span>
+        </div>
+        <h1>
+          Good morning, <span class="dynamic-student-name">Priya Sharma</span>! ☀️
+        </h1>
+        <p>
+          Target for Today: GS Paper 2 Federalism &amp; Inter-State Relations Revision, Daily Mains Answer Writing, and CSAT Quant Practice. Maintain your 14-day study rhythm!
+        </p>
+      </div>
+
+      <div class="portal-hero-actions">
+        <button class="btn btn-gold" onclick="document.querySelector('[data-tab=\'tab-answers\']').click(); document.getElementById('answerCopyFile').scrollIntoView({behavior:'smooth'});">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          <span>Submit Mains Copy</span>
+        </button>
+
+        <button class="btn btn-outline-gold" onclick="document.querySelector('[data-tab=\'tab-mentor-booking\']').click();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>Book Mentor Call</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. KPI Summary Cards Grid -->
+    <section class="portal-kpi-grid">
+      <div class="portal-kpi-card">
+        <div class="portal-kpi-header">
+          <span class="portal-kpi-title">Daily Study Targets</span>
+          <span class="portal-kpi-icon">📋</span>
+        </div>
+        <div class="portal-kpi-val" id="kpiDailyTasksDone">4 / 6</div>
+        <div class="portal-kpi-sub" style="color: var(--color-success);">
+          <span>●</span> <span>67% Completed Today</span>
+        </div>
+      </div>
+
+      <div class="portal-kpi-card">
+        <div class="portal-kpi-header">
+          <span class="portal-kpi-title">Mains Answers Evaluated</span>
+          <span class="portal-kpi-icon">✍️</span>
+        </div>
+        <div class="portal-kpi-val">48 Copies</div>
+        <div class="portal-kpi-sub" style="color: var(--gold-dark);">
+          <span>⭐</span> <span>Average Score: 9.8 / 15</span>
+        </div>
+      </div>
+
+      <div class="portal-kpi-card">
+        <div class="portal-kpi-header">
+          <span class="portal-kpi-title">Latest Mock Score</span>
+          <span class="portal-kpi-icon">📊</span>
+        </div>
+        <div class="portal-kpi-val">114.5 <span style="font-size: 1rem; color: var(--text-slate); font-weight: 500;">/ 200</span></div>
+        <div class="portal-kpi-sub" style="color: var(--blue);">
+          <span>🏆</span> <span>Rank 42 / 1,150 (Percentile: 96.4%)</span>
+        </div>
+      </div>
+
+      <div class="portal-kpi-card">
+        <div class="portal-kpi-header">
+          <span class="portal-kpi-title">Next Mentor Session</span>
+          <span class="portal-kpi-icon">🤝</span>
+        </div>
+        <div class="portal-kpi-val" id="kpiNextCall" style="font-size: 1.25rem;">Tomorrow at 6:30 PM</div>
+        <div class="portal-kpi-sub" style="color: var(--color-success);">
+          <span>🟢</span> <span>With Er. Aftab (GS-2 &amp; Strategy)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Interactive Student Portal Showcase Box & Tabs -->
+    <div class="portal-showcase-box">
+
+      <!-- Window Header with Tab Bar -->
+      <div class="portal-top-header">
+        <div class="portal-user-badge">
+          <div class="portal-avatar dynamic-student-avatar">PS</div>
+          <div>
+            <div class="portal-student-name dynamic-student-name">Priya Sharma</div>
+            <div class="portal-batch-tag">Roll: <span class="dynamic-student-id">BH-2026-0842</span> &bull; 1-on-1 Mentor: Er. Aftab</div>
+          </div>
+        </div>
+
+        <nav class="portal-nav-tabs" role="tablist">
+          <button class="portal-tab-btn active" data-tab="tab-tracker" type="button">
+            <span>📋</span> Daily Targets
+          </button>
+          <button class="portal-tab-btn" data-tab="tab-answers" type="button">
+            <span>✍️</span> Mains Evaluation
+          </button>
+          <button class="portal-tab-btn" data-tab="tab-analytics" type="button">
+            <span>📊</span> Test Analytics
+          </button>
+          <button class="portal-tab-btn" data-tab="tab-mentor-booking" type="button">
+            <span>🤝</span> Book Mentor Call
+          </button>
+          <button class="portal-tab-btn" data-tab="tab-study-vault" type="button">
+            <span>📚</span> Study Vault
+          </button>
+        </nav>
+      </div>
+
+      <!-- Tab Panels Container -->
+      <div class="portal-content-body">
+
+        <!-- TAB 1: Daily Target Tracker -->
+        <div class="portal-tab-panel active" id="tab-tracker">
+          <div class="tracker-header">
+            <div>
+              <h3 style="font-size: 1.2rem; color: var(--text-white); margin-bottom: 0.25rem;">Today's Micro-Roadmap &amp; Targets</h3>
+              <p style="font-size: 0.85rem; color: var(--text-slate);">Click on tasks as you complete them. Progress updates live and notifies your mentor.</p>
+            </div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--gold-dark);" id="portalProgressPercent">
+              67% Completed (4/6 Tasks)
+            </div>
+          </div>
+
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 67%;"></div>
+          </div>
+
+          <div class="task-list">
+            <div class="task-item completed">
+              <div class="task-left">
+                <div class="custom-checkbox">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="task-info-title">The Hindu &amp; Indian Express Editorial Analysis</div>
+                  <div class="task-info-tag">Current Affairs &bull; GS-2 Federalism &amp; Economy Columns</div>
+                </div>
+              </div>
+              <div class="task-time">07:00 AM - 08:30 AM &bull; <strong style="color:var(--color-success)">Done</strong></div>
+            </div>
+
+            <div class="task-item completed">
+              <div class="task-left">
+                <div class="custom-checkbox">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="task-info-title">GS Paper 2 Static Revision: Center-State Relations</div>
+                  <div class="task-info-tag">Polity Core &bull; Laxmikanth Chapters 14 &amp; 15 + Sarkaria Commission</div>
+                </div>
+              </div>
+              <div class="task-time">09:30 AM - 12:30 PM &bull; <strong style="color:var(--color-success)">Done</strong></div>
+            </div>
+
+            <div class="task-item completed">
+              <div class="task-left">
+                <div class="custom-checkbox">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="task-info-title">Daily Answer Writing: 2 Mains Questions Submitted</div>
+                  <div class="task-info-tag">Daily Evaluation &bull; Fiscal Federalism &amp; 16th Finance Commission</div>
+                </div>
+              </div>
+              <div class="task-time">02:00 PM - 03:00 PM &bull; <strong style="color:var(--color-success)">Done</strong></div>
+            </div>
+
+            <div class="task-item completed">
+              <div class="task-left">
+                <div class="custom-checkbox">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="task-info-title">Prelims Daily Mini-Mock: 20 Questions on Modern History</div>
+                  <div class="task-info-tag">Prelims Drill &bull; Score: 32/40 (80% Accuracy)</div>
+                </div>
+              </div>
+              <div class="task-time">04:00 PM - 05:00 PM &bull; <strong style="color:var(--color-success)">Done</strong></div>
+            </div>
+
+            <div class="task-item">
+              <div class="task-left">
+                <div class="custom-checkbox"></div>
+                <div>
+                  <div class="task-info-title">CSAT Daily Practice: 10 Reading Comprehension &amp; Quant Questions</div>
+                  <div class="task-info-tag">CSAT Qualifying &bull; Number System &amp; Critical Reasoning Passages</div>
+                </div>
+              </div>
+              <div class="task-time">06:00 PM - 07:00 PM &bull; Pending</div>
+            </div>
+
+            <div class="task-item">
+              <div class="task-left">
+                <div class="custom-checkbox"></div>
+                <div>
+                  <div class="task-info-title">Evening Mentor Daily Check-in &amp; Progress Reflection</div>
+                  <div class="task-info-tag">Accountability &bull; Submit hours &amp; obstacles to Mentor via WhatsApp group</div>
+                </div>
+              </div>
+              <div class="task-time">09:30 PM - 10:00 PM &bull; Pending</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; text-align: right;">
+            <button class="btn btn-gold" onclick="window.showToast('✅ Daily Study Target Log Submitted to Mentors (Er. Aftab & Er. Nandan).', 'success')">
+              Submit Today's Target Log to Mentor &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 2: Mains Answer Writing Evaluation -->
+        <div class="portal-tab-panel" id="tab-answers">
+          <div class="eval-grid">
+            
+            <!-- Evaluated Sheet Sample -->
+            <div class="answer-sheet-preview">
+              <div class="sample-answer-header">
+                <div style="font-size: 0.85rem; color: var(--gold-dark); font-weight: 700;">GS PAPER 2 &bull; MAINS QUESTION #14</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-white); margin-top: 0.35rem; line-height: 1.4;">
+                  &ldquo;Discuss the emerging challenges in Indian Federalism with specific reference to fiscal federalism and recent Finance Commission recommendations.&rdquo; (15 Marks, 250 Words)
+                </div>
+              </div>
+
+              <div style="font-size: 0.88rem; line-height: 1.6; color: var(--text-ivory); margin-top: 1rem;">
+                <p>
+                  <strong>Introduction:</strong> Indian federalism is quasi-federal in nature (K.C. Wheare), balancing national integration with regional autonomy. Article 1 of the Constitution establishes India as a 'Union of States'...
+                </p>
+
+                <div class="mentor-annotation praise">
+                  &check; <strong>Mentor Note:</strong> Strong opening mentioning Article 1 and K.C. Wheare quote. Crisp introduction (+1.0 mark).
+                </div>
+
+                <p style="margin-top: 0.75rem;">
+                  <strong>Emerging Fiscal Challenges:</strong>
+                  <br />1. Cesses &amp; Surcharges: Rising share of non-divisible pool shrinking states' effective devolution (approx 18-20% of gross tax revenue).
+                  <br />2. GST Compensation Cess phase-out putting pressure on state own-tax revenues.
+                </p>
+
+                <div class="mentor-annotation">
+                  &cross; <strong>Correction:</strong> Add 15th Finance Commission specific data on vertical devolution (41%). Also cite Sarkaria Commission recommendation on limiting cesses.
+                </div>
+
+                <p style="margin-top: 0.75rem;">
+                  <strong>Way Forward:</strong> Strengthening Inter-State Council under Article 263 and establishing cooperative federalism through consensus-based fiscal councils.
+                </p>
+
+                <div class="mentor-annotation praise">
+                  &check; <strong>Structure:</strong> Very clean sub-headings and constitutional article citations. Good presentation flow!
+                </div>
+              </div>
+            </div>
+
+            <!-- Scorecard & Upload New Copy -->
+            <div>
+              <div class="eval-scorecard">
+                <div class="eval-score-total">
+                  <div style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-slate); font-weight: 700;">Score Awarded</div>
+                  <div class="score-num">9.5 <span style="font-size: 1.1rem; color: var(--text-slate); font-weight: 500;">/ 15</span></div>
+                  <div style="font-size: 0.78rem; color: var(--color-success); font-weight: 700; margin-top: 2px;">
+                    &uarr; Top 8% of Cohort (Mains Standard Quality)
+                  </div>
+                </div>
+
+                <div style="margin-bottom: 1.25rem;">
+                  <div class="eval-rubric-row">
+                    <span>Demand of Question:</span>
+                    <span>3.0 / 4.0</span>
+                  </div>
+                  <div class="eval-rubric-row">
+                    <span>Constitutional Articles &amp; Data:</span>
+                    <span>2.5 / 4.0</span>
+                  </div>
+                  <div class="eval-rubric-row">
+                    <span>Sarkaria/Punchhi Recommendations:</span>
+                    <span>2.0 / 4.0</span>
+                  </div>
+                  <div class="eval-rubric-row">
+                    <span>Structure &amp; Conclusion:</span>
+                    <span>2.0 / 4.0</span>
+                  </div>
+                </div>
+
+                <div style="border-top: 1px solid rgba(15,23,42,0.08); padding-top: 0.85rem; font-size: 0.82rem; color: var(--text-slate); line-height: 1.5;">
+                  <strong style="color: var(--gold-dark);">Senior Mentor Verdict (Er. Aftab):</strong> 
+                  &ldquo;High conceptual clarity and legible handwriting. In the next test, incorporate a neat flow chart of the divisible pool mechanism to secure 10.5+ marks.&rdquo;
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <button class="btn btn-outline-gold" style="width: 100%; font-size: 0.85rem;" onclick="downloadStudyResource('Evaluated-Mains-Copy-BH-2026-0842.pdf')">
+                    📥 Download Annotated Evaluated Copy (PDF)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Upload New Copy Form -->
+              <div style="background: #FFFFFF; border: 1.5px solid var(--gold-border); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1.25rem; box-shadow: 0 4px 14px rgba(15,23,42,0.04);">
+                <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem;">Upload New Answer Copy for Evaluation</h4>
+                <p style="font-size: 0.8rem; color: var(--text-slate); margin-bottom: 0.85rem;">Guaranteed evaluated copy delivery within 24 hours.</p>
+
+                <form id="answerUploadForm">
+                  <div style="margin-bottom: 0.75rem;">
+                    <label style="font-size: 0.78rem; font-weight: 600; color: var(--text-ivory); display: block; margin-bottom: 0.25rem;">Select GS Paper</label>
+                    <select id="answerCopyPaper" class="auth-input" style="padding-left: 0.85rem; font-size: 0.85rem;">
+                      <option value="GS Paper 1 (History, Geography, Society)">GS Paper 1 (History, Geography, Society)</option>
+                      <option value="GS Paper 2 (Polity, Governance, IR)" selected>GS Paper 2 (Polity, Governance, IR)</option>
+                      <option value="GS Paper 3 (Economy, Science Tech, Ecology)">GS Paper 3 (Economy, Science Tech, Ecology)</option>
+                      <option value="GS Paper 4 (Ethics, Integrity & Aptitude)">GS Paper 4 (Ethics, Integrity & Aptitude)</option>
+                      <option value="Essay Paper (Philosophical & Socio-Economic)">Essay Paper (Philosophical & Socio-Economic)</option>
+                    </select>
+                  </div>
+
+                  <div style="margin-bottom: 0.85rem;">
+                    <label style="font-size: 0.78rem; font-weight: 600; color: var(--text-ivory); display: block; margin-bottom: 0.25rem;">Select PDF Copy</label>
+                    <input type="file" id="answerCopyFile" accept=".pdf,image/*" required class="auth-input" style="padding-left: 0.85rem; font-size: 0.82rem;" />
+                  </div>
+
+                  <button type="submit" class="auth-btn-submit" style="padding: 0.65rem 1rem; font-size: 0.88rem;">
+                    <span>Submit Answer Copy (24h Evaluation)</span>
+                  </button>
+                </form>
+
+                <div id="answerUploadSuccess" style="display: none;"></div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB 3: Prelims & Mains Mock Analytics -->
+        <div class="portal-tab-panel" id="tab-analytics">
+          <div class="analytics-stats-grid">
+            <div class="analytic-card">
+              <div class="analytic-val">114.5</div>
+              <div class="analytic-lbl">Latest Mock Score (Cutoff: 88.0)</div>
+            </div>
+            <div class="analytic-card">
+              <div class="analytic-val">96.4%</div>
+              <div class="analytic-lbl">All-India Percentile (Rank 42/1,150)</div>
+            </div>
+            <div class="analytic-card">
+              <div class="analytic-val">78.2%</div>
+              <div class="analytic-lbl">Accuracy Rate (68 Correct / 18 Incorrect)</div>
+            </div>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid var(--gold-border); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 14px rgba(15,23,42,0.03);">
+            <h4 style="font-size: 1rem; color: var(--ink); margin-bottom: 1.25rem; font-weight: 700;">Subject-Wise Performance Breakdown</h4>
+
+            <div class="subject-bar-item">
+              <div class="subject-bar-header">
+                <span>Indian Polity &amp; Governance</span>
+                <span style="color: var(--color-success); font-weight: 700;">88% Accuracy (Strong)</span>
+              </div>
+              <div class="subject-bar-track">
+                <div class="subject-bar-val" style="width: 88%;"></div>
+              </div>
+            </div>
+
+            <div class="subject-bar-item">
+              <div class="subject-bar-header">
+                <span>Modern Indian History &amp; Art/Culture</span>
+                <span style="color: var(--gold-dark); font-weight: 700;">72% Accuracy (Good)</span>
+              </div>
+              <div class="subject-bar-track">
+                <div class="subject-bar-val" style="width: 72%;"></div>
+              </div>
+            </div>
+
+            <div class="subject-bar-item">
+              <div class="subject-bar-header">
+                <span>Economy &amp; Budget Analysis</span>
+                <span style="color: var(--color-warning); font-weight: 700;">64% Accuracy (Moderate)</span>
+              </div>
+              <div class="subject-bar-track">
+                <div class="subject-bar-val" style="width: 64%;"></div>
+              </div>
+            </div>
+
+            <div class="subject-bar-item">
+              <div class="subject-bar-header">
+                <span>Environment, Ecology &amp; Science Tech</span>
+                <span style="color: #DC2626; font-weight: 700;">52% Accuracy (Needs Attention)</span>
+              </div>
+              <div class="subject-bar-track">
+                <div class="subject-bar-val" style="width: 52%; background: #EF4444;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actionable Mentorship Prescription -->
+          <div style="background: rgba(197, 147, 37, 0.08); border-left: 4px solid var(--gold-primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1.25rem; font-size: 0.88rem; color: var(--text-ivory); line-height: 1.5;">
+            <strong>Mentor Prescription (Er. Nandan):</strong> &ldquo;Priya, your Polity and History scores are well above the safe cutoff. However, 12 negative marks occurred in Environment treaties and National Parks questions. Revise the <em>Environment Value Vault Compendium</em> before Mock 5.&rdquo;
+          </div>
+        </div>
+
+        <!-- TAB 4: 1-on-1 Mentor Slot Booking -->
+        <div class="portal-tab-panel" id="tab-mentor-booking">
+          <div class="mentor-profile-box">
+            <div class="mentor-profile-avatar">EA</div>
+            <div>
+              <h4 style="color: var(--ink); font-size: 1.15rem; font-weight: 700;">Er. Aftab (Chief Mentor &amp; Co-Founder)</h4>
+              <p style="font-size: 0.85rem; color: var(--gold-dark); font-weight: 600;">Civil Services Strategist &amp; GS-2/GS-4 Mains Evaluator &bull; 9+ Years Experience</p>
+              <p style="font-size: 0.82rem; color: var(--text-slate); margin-top: 0.25rem;">Co-mentoring with Er. Nandan (BPSC &amp; Analytical Problem Solving Expert)</p>
+            </div>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid rgba(15,23,42,0.12); border-radius: var(--radius-sm); padding: 1.5rem; box-shadow: 0 4px 14px rgba(15,23,42,0.03);">
+            <h4 style="font-size: 1rem; color: var(--ink); margin-bottom: 0.35rem; font-weight: 700;">Select Available 1-on-1 Strategy Call Slot:</h4>
+            <p style="font-size: 0.84rem; color: var(--text-slate);">Sessions are 100% private, conducted via Google Meet / Zoom (Duration: 30-45 mins).</p>
+
+            <div class="slots-grid">
+              <button type="button" class="slot-btn" data-slot="Tomorrow • 4:00 PM">Tomorrow &bull; 4:00 PM</button>
+              <button type="button" class="slot-btn selected" data-slot="Tomorrow • 6:30 PM">Tomorrow &bull; 6:30 PM</button>
+              <button type="button" class="slot-btn" data-slot="Thursday • 11:00 AM">Thursday &bull; 11:00 AM</button>
+              <button type="button" class="slot-btn" data-slot="Thursday • 5:00 PM">Thursday &bull; 5:00 PM</button>
+              <button type="button" class="slot-btn" data-slot="Friday • 3:00 PM">Friday &bull; 3:00 PM</button>
+              <button type="button" class="slot-btn" data-slot="Saturday • 7:00 PM">Saturday &bull; 7:00 PM</button>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem;">
+              <button type="button" id="confirmSlotBookingBtn" class="btn btn-gold">
+                Confirm Mentorship Slot &amp; Generate Link
+              </button>
+            </div>
+
+            <div id="slotBookedAlert" style="display: none;"></div>
+          </div>
+        </div>
+
+        <!-- TAB 5: Study Vault & Curated Notes -->
+        <div class="portal-tab-panel" id="tab-study-vault">
+          <div style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.2rem; color: var(--ink); font-weight: 700;">Bureaucrats Hive Curated Study Vault</h3>
+            <p style="font-size: 0.85rem; color: var(--text-slate);">High-yield value addition compendiums, Supreme Court judgment tables, and monthly digests.</p>
+          </div>
+
+          <div class="study-vault-grid">
+            <div class="study-vault-card">
+              <div>
+                <span class="study-vault-tag">GS PAPER 2</span>
+                <div class="study-vault-title">Supreme Court Landmark Judgments (2020-2025 Compendium)</div>
+                <div class="study-vault-meta">48 Pages &bull; PDF Format &bull; With Quote Keywords</div>
+              </div>
+              <button class="study-vault-btn" onclick="downloadStudyResource('Supreme Court Landmark Judgments (2020-2025)')">
+                📥 Download PDF (4.2 MB)
+              </button>
+            </div>
+
+            <div class="study-vault-card">
+              <div>
+                <span class="study-vault-tag">CURRENT AFFAIRS</span>
+                <div class="study-vault-title">Monthly Yojana &amp; Kurukshetra Analytical Gist (Latest)</div>
+                <div class="study-vault-meta">32 Pages &bull; PDF Format &bull; Mains Keywords &amp; Diagrams</div>
+              </div>
+              <button class="study-vault-btn" onclick="downloadStudyResource('Monthly Yojana & Kurukshetra Analytical Gist')">
+                📥 Download PDF (3.8 MB)
+              </button>
+            </div>
+
+            <div class="study-vault-card">
+              <div>
+                <span class="study-vault-tag">GS PAPER 3</span>
+                <div class="study-vault-title">Indian Economy &amp; Union Budget Data Factsheet</div>
+                <div class="study-vault-meta">26 Pages &bull; PDF Format &bull; Charts &amp; Sectoral Devolution</div>
+              </div>
+              <button class="study-vault-btn" onclick="downloadStudyResource('Indian Economy & Union Budget Factsheet')">
+                📥 Download PDF (2.9 MB)
+              </button>
+            </div>
+
+            <div class="study-vault-card">
+              <div>
+                <span class="study-vault-tag">BPSC SPECIAL</span>
+                <div class="study-vault-title">71st BPSC Bihar Special History, Geography &amp; Schemes</div>
+                <div class="study-vault-meta">58 Pages &bull; PDF Format &bull; Census &amp; Economic Survey</div>
+              </div>
+              <button class="study-vault-btn" onclick="downloadStudyResource('71st BPSC Bihar Special Handbook')">
+                📥 Download PDF (5.1 MB)
+              </button>
+            </div>
+
+            <div class="study-vault-card">
+              <div>
+                <span class="study-vault-tag">GS PAPER 4</span>
+                <div class="study-vault-title">Ethics Case Studies Framework &amp; Thinkers Quotations</div>
+                <div class="study-vault-meta">35 Pages &bull; PDF Format &bull; 25 Solved Standard Dilemmas</div>
+              </div>
+              <button class="study-vault-btn" onclick="downloadStudyResource('Ethics Case Studies Framework')">
+                📥 Download PDF (3.4 MB)
+              </button>
+            </div>
+
+            <div class="study-vault-card">
+              <div>
+                <span class="study-vault-tag">PRELIMS SPECIAL</span>
+                <div class="study-vault-title">Modern Indian History Chronology &amp; Governor-Generals Table</div>
+                <div class="study-vault-meta">22 Pages &bull; PDF Format &bull; High Yield Quick Revision</div>
+              </div>
+              <button class="study-vault-btn" onclick="downloadStudyResource('Modern Indian History Chronology Table')">
+                📥 Download PDF (1.9 MB)
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Portal Footer -->
+  <footer style="background: #FFFFFF; border-top: 1px solid var(--ed-line); padding: 1.25rem 2rem; font-size: 0.85rem; color: var(--text-slate); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+    <div>
+      &copy; 2026 <strong>Bureaucrats Hive LMS</strong>. Need technical support or have evaluation queries? Call/WhatsApp: <a href="tel:+919754761682" style="color: var(--gold-dark); text-decoration: none; font-weight: 600;">+91 97547 61682</a>
+    </div>
+    <div style="display: flex; gap: 1.25rem;">
+      <a href="index.html" style="color: var(--text-slate); text-decoration: none;">Main Website</a>
+      <a href="index.html#faq" style="color: var(--text-slate); text-decoration: none;">Help &amp; FAQs</a>
+      <a href="javascript:void(0)" onclick="logoutStudent()" style="color: #DC2626; text-decoration: none; font-weight: 600;">Sign Out</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js?v=12"></script>
+  <script src="js/portal.js?v=12"></script>
+</body>
+</html>
